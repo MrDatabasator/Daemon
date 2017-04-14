@@ -1,0 +1,27 @@
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csprojResolveAssemblyReference.cache
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.Daemon.resources
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.ProjectInstaller.resources
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.pdb
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+c:\users\s\documents\visual studio 2015\Projects\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\s\Desktop\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\s\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+C:\Users\s\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\novakpatrik\Source\Repos\BackupSoftware\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\novakpatrik\Source\Repos\BackupSoftware\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+C:\Users\novakpatrik\Source\Repos\BackupSoftware\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csprojResolveAssemblyReference.cache
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.Daemon.resources
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.ProjectInstaller.resources
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
