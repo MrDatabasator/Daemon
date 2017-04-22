@@ -1,20 +1,5 @@
-14. 4. 2017 10:48:51:: Test >> Daemon started its task
-14. 4. 2017 10:48:51:: Test >> Running on: SMUDLINCIN-POCI
-14. 4. 2017 10:52:44:: Test >> Daemon stopped its task
-14. 4. 2017 12:04:48:: Test >> Daemon started its task
-14. 4. 2017 12:04:48:: Test >> Running on: SMUDLINCIN-POCI
-14. 4. 2017 12:04:48:: Test >> Attempting to connect to: /Service1.svc
-14. 4. 2017 12:05:22:: Test >> Daemon stopped its task
-14. 4. 2017 12:07:06:: Test >> Daemon started its task
-14. 4. 2017 12:07:06:: Test >> Running on: SMUDLINCIN-POCI
-14. 4. 2017 12:07:06:: Test >> Attempting to connect to: /Service1.svc
-14. 4. 2017 12:07:35:: Test >> Daemon stopped its task
-14. 4. 2017 12:07:36:: Test >> Daemon started its task
-14. 4. 2017 12:07:36:: Test >> Running on: SMUDLINCIN-POCI
-14. 4. 2017 12:07:36:: Test >> Attempting to connect to: /Service1.svc
-22. 4. 2017 11:11:23:: Test >> Daemon started its task
-22. 4. 2017 11:11:23:: Test >> Running on: SMUDLINCIN-POCI
-22. 4. 2017 11:11:23:: Test >> Attempting to connect to: /Service1.svc
-22. 4. 2017 11:11:25:: Test >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-22. 4. 2017 11:12:59:: Test >> Daemon stopped its task
-22. 4. 2017 11:21:45:: Test >> Kolekce byla upravena. Operace výčtu pravděpodobně nebude spuštěna.
+22. 4. 2017 12:06:15:: Daemon1 >> Daemon started its task
+22. 4. 2017 12:06:15:: Daemon1 >> Running on: SMUDLINCIN-POCI
+22. 4. 2017 12:06:15:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+22. 4. 2017 12:06:17:: Daemon1 >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
+22. 4. 2017 12:07:08:: Daemon1 >> Daemon stopped its task

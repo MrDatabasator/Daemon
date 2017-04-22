@@ -13,6 +13,8 @@ namespace BackupDaemon
     {
         public static string DaemonName = "Test";
 
+        public static string wStringAddress = "http://localhost:42867/Service1.svc";
+
         public static BasicHttpBinding wBinding { get; set; }    
 
         public static EndpointAddress wAddress { get; set; }
@@ -45,10 +47,11 @@ namespace BackupDaemon
             StreamReader sr = null;
             sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\Config.txt", true);
             List<string> cLines = sr.ReadToEnd().Split(';').ToList<string>();
-            foreach(string line in cLines)            
+            /*foreach(string line in cLines)            
                 if (string.IsNullOrWhiteSpace(line) || line.Contains("//"))                
-                    cLines.Remove(line);
+                    cLines.Remove(line);*/
             ConfigSolver cSolver = new ConfigSolver(cLines);
+            cSolver = null;
             sr.Dispose();
             sr.Close();
         }
@@ -61,9 +64,9 @@ namespace BackupDaemon
         public static void ConnectToWcfServer()
         {
             wBinding = new BasicHttpBinding();
-            wAddress = new EndpointAddress("http://localhost:42867/Service1.svc");
-            WriteToLog("Attempting to connect to: " + wAddress.ToString());
-            wChannelFac = new ChannelFactory<ServerReference.IService1>(wBinding, wAddress);   
+            wAddress = new EndpointAddress(wStringAddress);
+            WriteToLog("Attempting to connect to: " + wStringAddress);
+            wChannelFac = new ChannelFactory<ServerReference.IService1>(wBinding, wAddress);  
 
             wClient = wChannelFac.CreateChannel(); 
         }

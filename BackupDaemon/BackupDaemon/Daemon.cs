@@ -7,21 +7,23 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Timers;
 
 namespace BackupDaemon
 {
     public partial class Daemon : ServiceBase
     {
-        private Timer _timer { get; set; }
+        private System.Timers.Timer _timer { get; set; }
         public Daemon()
         {
             InitializeComponent();
-            _timer = new Timer();            
+            _timer = new System.Timers.Timer();            
         }
 
         protected override void OnStart(string[] args)
         {
+            Thread.Sleep(10000);
             try
             {
                 Core.GetConfigInfo();
