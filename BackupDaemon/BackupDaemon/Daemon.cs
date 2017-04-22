@@ -22,11 +22,13 @@ namespace BackupDaemon
 
         protected override void OnStart(string[] args)
         {
-            Core.WriteToLog("Daemon started its task");
-            Core.WriteToLog("Running on: " + Environment.MachineName);
-
             try
             {
+                Core.GetConfigInfo();
+                Core.WriteToLog("Daemon started its task");
+                Core.WriteToLog("Running on: " + Environment.MachineName);
+
+            
                 Core.ConnectToWcfServer();
                 Core.wClient.UploadString("Patrik neumi programovat");
                 Core.wChannelFac.Close();
@@ -41,6 +43,7 @@ namespace BackupDaemon
 
         protected override void OnStop()
         {
+            Core.WriteConfigInfo();
             Core.WriteToLog("Daemon stopped its task");
             _timer.Stop();
         }

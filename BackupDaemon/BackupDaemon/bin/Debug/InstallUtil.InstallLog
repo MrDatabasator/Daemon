@@ -101,3 +101,24 @@ Umístění souboru: C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\bin\Debug\Ba
 Potvrzovací fáze byla úspěšně dokončena.
 
 Instalace s podporou transakcí byla dokončena.
+
+
+Zahajování odinstalace
+Prohlédněte si obsah souboru protokolu pro průběh sestavení C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe.
+Umístění souboru: C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.InstallLog
+
+Odinstalace byla dokončena.
+
+Spouštění instalace s podporou transakcí
+
+Zahajování instalační fáze instalace
+Prohlédněte si obsah souboru protokolu pro průběh sestavení C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe.
+Umístění souboru: C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.InstallLog
+
+Instalační fáze byla úspěšně dokončena a začíná potvrzovací fáze.
+Prohlédněte si obsah souboru protokolu pro průběh sestavení C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe.
+Umístění souboru: C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.InstallLog
+
+Potvrzovací fáze byla úspěšně dokončena.
+
+Instalace s podporou transakcí byla dokončena.

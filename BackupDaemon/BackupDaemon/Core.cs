@@ -24,8 +24,6 @@ namespace BackupDaemon
         //public static MyServiceClient
 
 
-
-
         public static void WriteToLog(Exception ex)
         {
             StreamWriter sw = null;
@@ -47,17 +45,24 @@ namespace BackupDaemon
             StreamReader sr = null;
             sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\Config.txt", true);
             List<string> cLines = sr.ReadToEnd().Split(';').ToList<string>();
-
+            foreach(string line in cLines)            
+                if (string.IsNullOrWhiteSpace(line) || line.Contains("//"))                
+                    cLines.Remove(line);
+            ConfigSolver cSolver = new ConfigSolver(cLines);
             sr.Dispose();
             sr.Close();
+        }
+        public static void WriteConfigInfo()
+        {
+            ConfigSolver cSolver = new ConfigSolver();
+            cSolver = null;
         }
 
         public static void ConnectToWcfServer()
         {
-
             wBinding = new BasicHttpBinding();
             wAddress = new EndpointAddress("http://localhost:42867/Service1.svc");
-            WriteToLog("Attempting to connect to: " + wAddress.Uri.AbsolutePath);
+            WriteToLog("Attempting to connect to: " + wAddress.ToString());
             wChannelFac = new ChannelFactory<ServerReference.IService1>(wBinding, wAddress);   
 
             wClient = wChannelFac.CreateChannel(); 

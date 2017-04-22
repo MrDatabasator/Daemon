@@ -93,3 +93,24 @@ Zasažené parametry:
    logtoconsole = 
    logfile = C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.InstallLog
    assemblypath = C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe
+Odinstalace sestavení C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe
+Zasažené parametry:
+   logtoconsole = 
+   logfile = C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.InstallLog
+   assemblypath = C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe
+Odebírání zdroje EventLog BackupDaemon
+Odebírání služby BackupDaemon ze systému...
+Služba BackupDaemon byla úspěšně odebrána ze systému.
+Instalace sestavení C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe
+Zasažené parametry:
+   logtoconsole = 
+   logfile = C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.InstallLog
+   assemblypath = C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe
+Instalace služby BackupDaemon...
+Služba BackupDaemon byla úspěšně nainstalována.
+Vytváření zdroje EventLog BackupDaemon v protokolu Application...
+Potvrzování sestavení C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe
+Zasažené parametry:
+   logtoconsole = 
+   logfile = C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.InstallLog
+   assemblypath = C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Backupdaemon.exe
