@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup.cs" />
     <Compile Include="ConfigSolver.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Daemon.cs">
@@ -56,6 +57,7 @@
     <Compile Include="Daemon.Designer.cs">
       <DependentUpon>Daemon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Destination.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
@@ -69,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Task.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
