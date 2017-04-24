@@ -11,7 +11,7 @@ namespace BackupDaemon
         private Destination Destination { get; set; }
         public Backup(/*Destination*/)
         {
-
+//
         }
 
         public void SSHbackup()
