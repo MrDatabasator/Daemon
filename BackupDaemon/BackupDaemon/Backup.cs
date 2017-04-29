@@ -8,10 +8,10 @@ namespace BackupDaemon
 {
     public class Backup
     {
-        private Destination Destination { get; set; }
+       // private Destination Destination { get; set; }
         public Backup(/*Destination*/)
         {
-//
+
         }
 
         public void SSHbackup()
@@ -22,11 +22,14 @@ namespace BackupDaemon
         {
 
         }
-        public void NETbackup()
+        public void NETbackupFile(string SourcePath, string TargetPath)
         {
+            System.IO.File.Move(SourcePath, TargetPath);
+        }
+        public void NETbackupDirectory(string SourcePath, string TargetPath)
+        {
+            System.IO.Directory.Move(SourcePath, TargetPath);
 
         }
-        
-
     }
 }

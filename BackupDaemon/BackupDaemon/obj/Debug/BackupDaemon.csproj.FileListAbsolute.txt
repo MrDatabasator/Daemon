@@ -43,3 +43,4 @@ C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaem
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\adasdasdasd\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
