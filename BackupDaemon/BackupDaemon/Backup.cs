@@ -24,12 +24,37 @@ namespace BackupDaemon
         }
         public void NETbackupFile(string SourcePath, string TargetPath)
         {
-            System.IO.File.Move(SourcePath, TargetPath);
+            if (!System.IO.File.Exists(TargetPath))
+            {
+                System.IO.File.Create(TargetPath);
+            }
+
+                try
+            {
+                System.IO.File.Move(SourcePath, TargetPath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }            
         }
         public void NETbackupDirectory(string SourcePath, string TargetPath)
         {
-            System.IO.Directory.Move(SourcePath, TargetPath);
+            if (!System.IO.Directory.Exists(TargetPath))
+            {
+                System.IO.Directory.CreateDirectory(TargetPath);
+            }
 
+            try
+            {
+                System.IO.Directory.Move(SourcePath, TargetPath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }         
         }
     }
 }
