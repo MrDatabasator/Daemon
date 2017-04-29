@@ -26,37 +26,34 @@ namespace BackupDaemon
         public void NETbackupFile(string SourcePath, string TargetPath)
         {
             Client = new ServerReference.Service1Client();
-
-            if (!System.IO.File.Exists(TargetPath))
-            {
-                System.IO.File.Create(TargetPath);
-            }    
                     
             try
             {
-                System.IO.File.Move(SourcePath, TargetPath);
+                System.IO.File.Copy(SourcePath, TargetPath);
             }
             catch (Exception)
             {
-                Client.NewLogMessage(Core.Id, "Backup cannot copy " + SourcePath + " in " + TargetPath);
+                Client.NewLogMessage(Core.Id, "Backup cannot copy file" + SourcePath + " in " + TargetPath);
             }            
         }
         public void NETbackupDirectory(string SourcePath, string TargetPath)
         {
+
             Client = new ServerReference.Service1Client();
 
-            if (!System.IO.Directory.Exists(TargetPath))
+           /* if (!System.IO.Directory.Exists(TargetPath))
             {
                 System.IO.Directory.CreateDirectory(TargetPath);
-            }
+            }*/
 
+            //nemůže být move
             try
             {
                 System.IO.Directory.Move(SourcePath, TargetPath);
             }
             catch (Exception)
             {
-                Client.NewLogMessage(Core.Id, "Backup cannot copy " + SourcePath + " in " + TargetPath);
+                Client.NewLogMessage(Core.Id, "Backup cannot copy directory" + SourcePath + " in " + TargetPath);
             }         
         }
     }
