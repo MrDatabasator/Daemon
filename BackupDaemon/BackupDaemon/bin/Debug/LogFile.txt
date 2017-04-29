@@ -1,5 +1,29 @@
-22. 4. 2017 12:06:15:: Daemon1 >> Daemon started its task
-22. 4. 2017 12:06:15:: Daemon1 >> Running on: SMUDLINCIN-POCI
-22. 4. 2017 12:06:15:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
-22. 4. 2017 12:06:17:: Daemon1 >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-22. 4. 2017 12:07:08:: Daemon1 >> Daemon stopped its task
+﻿28. 4. 2017 16:40:18:: DaemonTest >> Daemon started its task
+28. 4. 2017 16:40:18:: DaemonTest >> Running on: SMUDLINCIN-POCI
+28. 4. 2017 16:40:18:: DaemonTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+28. 4. 2017 16:40:20:: DaemonTest >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
+28. 4. 2017 17:10:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 17:40:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 18:10:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 18:40:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 19:10:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 19:40:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 20:10:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 20:40:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 21:10:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 21:40:08:: DaemonTest >> Fucked someone's gaming experience
+28. 4. 2017 22:10:09:: DaemonTest >> Fucked someone's gaming experience
+29. 4. 2017 10:33:16:: DaemonTest >> Fucked someone's gaming experience
+29. 4. 2017 11:03:16:: DaemonTest >> Fucked someone's gaming experience
+29. 4. 2017 11:33:16:: DaemonTest >> Fucked someone's gaming experience
+29. 4. 2017 11:41:19:: DaemonTest >> Daemon stopped its task
+29. 4. 2017 11:41:31:: DaemonTest >> Daemon started its task
+29. 4. 2017 11:41:31:: DaemonTest >> Running on: SMUDLINCIN-POCI
+29. 4. 2017 11:41:31:: DaemonTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+29. 4. 2017 11:41:33:: DaemonTest >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
+29. 4. 2017 11:42:04:: DaemonTest >> Daemon stopped its task
+29. 4. 2017 11:42:26:: DaemonFeggit >> Daemon started its task
+29. 4. 2017 11:42:26:: DaemonFeggit >> Running on: SMUDLINCIN-POCI
+29. 4. 2017 11:42:26:: DaemonFeggit >> Attempting to connect to: http://localhost:42867/Service1.svc
+29. 4. 2017 11:42:28:: DaemonFeggit >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
+29. 4. 2017 11:42:43:: DaemonFeggit >> Daemon stopped its task

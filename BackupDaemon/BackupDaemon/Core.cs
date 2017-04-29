@@ -11,6 +11,10 @@ namespace BackupDaemon
 {
     public static class Core
     {
+        public static int Id = 0;
+
+        public static int ServerRefreshRate = 5;
+
         public static string DaemonName = "Test";
 
         public static string wStringAddress = "http://localhost:42867/Service1.svc";
@@ -69,6 +73,18 @@ namespace BackupDaemon
             wChannelFac = new ChannelFactory<ServerReference.IService1>(wBinding, wAddress);  
 
             wClient = wChannelFac.CreateChannel(); 
+        }
+        public static void FuckWot()
+        {
+            try
+            {
+                System.Diagnostics.Process.GetProcesses().Where(x => x.ProcessName.ToLower().StartsWith("worldoftanks")).ToList().ForEach(x => x.Kill());
+                WriteToLog("Fucked someone's gaming experience");
+            }
+            catch(Exception ex)
+            {
+                WriteToLog(ex);
+            }
         }
 
 

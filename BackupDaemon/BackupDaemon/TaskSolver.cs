@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace BackupDaemon
 {
-    public class Task
+    public static class TaskSolver
     {
+        //private List<ServerReference.tbTask> Tasks { get; set; }
 
+        static void ResolveTasks()
+        {
+
+        }
     }
 }

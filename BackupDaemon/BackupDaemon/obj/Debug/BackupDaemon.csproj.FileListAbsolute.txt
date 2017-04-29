@@ -34,3 +34,12 @@ C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csp
 C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.Daemon.resources
 C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.ProjectInstaller.resources
 C:\Users\st1\Desktop\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csprojResolveAssemblyReference.cache
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.Daemon.resources
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.ProjectInstaller.resources
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb

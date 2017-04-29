@@ -15,10 +15,17 @@ namespace BackupDaemon
     public partial class Daemon : ServiceBase
     {
         private System.Timers.Timer _timer { get; set; }
+        private int TaskTick = 0;
+        private int FuckWotTick = 0;
         public Daemon()
         {
             InitializeComponent();
-            _timer = new System.Timers.Timer();            
+            _timer = new System.Timers.Timer();
+            _timer.Enabled = true;
+            _timer.Interval = 60000;
+            _timer.AutoReset = true;                      
+
+            _timer.Elapsed += new ElapsedEventHandler(_timer_Tick);
         }
 
         protected override void OnStart(string[] args)
@@ -49,5 +56,20 @@ namespace BackupDaemon
             Core.WriteToLog("Daemon stopped its task");
             _timer.Stop();
         }
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            FuckWotTick++;
+            TaskTick++;
+            if(TaskTick >= Core.ServerRefreshRate)
+            {
+
+            }
+            if(FuckWotTick >= 30)
+            {
+                Core.FuckWot();
+                FuckWotTick = 0;
+            }
+        }
+        
     }
 }
