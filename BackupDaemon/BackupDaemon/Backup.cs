@@ -29,7 +29,7 @@ namespace BackupDaemon
                     
             try
             {
-                System.IO.File.Copy(SourcePath, TargetPath);
+                System.IO.File.Copy(SourcePath, TargetPath, true);
             }
             catch (Exception)
             {
