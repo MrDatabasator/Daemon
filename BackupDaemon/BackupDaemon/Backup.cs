@@ -33,7 +33,7 @@ namespace BackupDaemon
             }
             catch (Exception)
             {
-                Client.NewLogMessage(Core.Id, "Backup cannot copy file" + SourcePath + " in " + TargetPath);
+                Client.NewLogMessage(Core.Id, "Backup cannot copy file" + SourcePath + " to " + TargetPath);
             }            
         }
         public void NETbackupDirectory(string SourcePath, string TargetPath)
@@ -53,7 +53,7 @@ namespace BackupDaemon
             }
             catch (Exception)
             {
-                Client.NewLogMessage(Core.Id, "Backup cannot copy directory" + SourcePath + " in " + TargetPath);
+                Client.NewLogMessage(Core.Id, "Backup cannot copy directory" + SourcePath + " to " + TargetPath);
             }         
         }
     }
