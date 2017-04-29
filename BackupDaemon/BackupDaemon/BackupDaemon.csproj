@@ -77,7 +77,10 @@
     <None Include="Service References\ServerReference\BackupDaemon.ServerReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServerReference\BackupDaemon.ServerReference.Daemon.datasource">
+    <None Include="Service References\ServerReference\BackupDaemon.ServerReference.tbDaemon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerReference\BackupDaemon.ServerReference.tbTask.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerReference\Service1.wsdl" />

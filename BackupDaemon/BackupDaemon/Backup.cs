@@ -8,7 +8,8 @@ namespace BackupDaemon
 {
     public class Backup
     {
-       // private Destination Destination { get; set; }
+        ServerReference.Service1Client Client { get; set; }
+        // private Destination Destination { get; set; }
         public Backup(/*Destination*/)
         {
 
@@ -24,23 +25,26 @@ namespace BackupDaemon
         }
         public void NETbackupFile(string SourcePath, string TargetPath)
         {
+            Client = new ServerReference.Service1Client();
+
             if (!System.IO.File.Exists(TargetPath))
             {
                 System.IO.File.Create(TargetPath);
-            }
-
-                try
+            }    
+                    
+            try
             {
                 System.IO.File.Move(SourcePath, TargetPath);
             }
             catch (Exception)
             {
-
-                throw;
+                Client.NewLogMessage(Core.Id, "Backup cannot copy " + SourcePath + " in " + TargetPath);
             }            
         }
         public void NETbackupDirectory(string SourcePath, string TargetPath)
         {
+            Client = new ServerReference.Service1Client();
+
             if (!System.IO.Directory.Exists(TargetPath))
             {
                 System.IO.Directory.CreateDirectory(TargetPath);
@@ -52,8 +56,7 @@ namespace BackupDaemon
             }
             catch (Exception)
             {
-
-                throw;
+                Client.NewLogMessage(Core.Id, "Backup cannot copy " + SourcePath + " in " + TargetPath);
             }         
         }
     }

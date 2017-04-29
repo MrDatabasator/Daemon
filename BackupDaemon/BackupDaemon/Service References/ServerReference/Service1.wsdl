@@ -19,6 +19,66 @@
   <wsdl:message name="IService1_UploadDaemon_OutputMessage">
     <wsdl:part name="parameters" element="tns:UploadDaemonResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UploadDestination_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDestination" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadDestination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDestinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadLog" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTask" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDaemonLastActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDaemonLastActive" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDaemonLastActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDaemonLastActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckDeamonReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDeamonReference" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckDeamonReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDeamonReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDeamonReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeamonReference" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDeamonReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExistDeamonTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistDeamonTask" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExistDeamonTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistDeamonTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDeamonTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeamonTask" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDeamonTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeamonTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewLogMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewLogMessage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewLogMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewLogMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllDaemons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDaemons" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllDaemons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDaemonsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDaemon_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDaemon" />
   </wsdl:message>
@@ -46,6 +106,46 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadDaemon" message="tns:IService1_UploadDaemon_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadDaemonResponse" message="tns:IService1_UploadDaemon_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UploadDestination">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadDestination" message="tns:IService1_UploadDestination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadDestinationResponse" message="tns:IService1_UploadDestination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadLog" message="tns:IService1_UploadLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadLogResponse" message="tns:IService1_UploadLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadTask" message="tns:IService1_UploadTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadTaskResponse" message="tns:IService1_UploadTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDaemonLastActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDaemonLastActive" message="tns:IService1_UpdateDaemonLastActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDaemonLastActiveResponse" message="tns:IService1_UpdateDaemonLastActive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeamonReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckDeamonReference" message="tns:IService1_CheckDeamonReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckDeamonReferenceResponse" message="tns:IService1_CheckDeamonReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeamonReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReference" message="tns:IService1_UpdateDeamonReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceResponse" message="tns:IService1_UpdateDeamonReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistDeamonTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExistDeamonTask" message="tns:IService1_ExistDeamonTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExistDeamonTaskResponse" message="tns:IService1_ExistDeamonTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeamonTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDeamonTask" message="tns:IService1_GetDeamonTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDeamonTaskResponse" message="tns:IService1_GetDeamonTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewLogMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NewLogMessage" message="tns:IService1_NewLogMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NewLogMessageResponse" message="tns:IService1_NewLogMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDaemons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllDaemons" message="tns:IService1_GetAllDaemons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllDaemonsResponse" message="tns:IService1_GetAllDaemons_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetDaemon">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDaemon" message="tns:IService1_GetDaemon_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDaemonResponse" message="tns:IService1_GetDaemon_OutputMessage" />
@@ -72,6 +172,96 @@
     </wsdl:operation>
     <wsdl:operation name="UploadDaemon">
       <soap:operation soapAction="http://tempuri.org/IService1/UploadDaemon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDestination">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadDestination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadLog">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTask">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDaemonLastActive">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDaemonLastActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeamonReference">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckDeamonReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeamonReference">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDeamonReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistDeamonTask">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExistDeamonTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeamonTask">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDeamonTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewLogMessage">
+      <soap:operation soapAction="http://tempuri.org/IService1/NewLogMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDaemons">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllDaemons" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
