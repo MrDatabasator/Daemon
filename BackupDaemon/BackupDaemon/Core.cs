@@ -11,6 +11,10 @@ namespace BackupDaemon
 {
     public static class Core
     {
+        public static List<ServerReference.tbTask> Tasks { get; set; }
+
+        public static List<ServerReference.tbDestination> Destinations { get; set; }
+
         public static int Id = 0;
 
         public static int ServerRefreshRate = 5;
@@ -85,6 +89,32 @@ namespace BackupDaemon
             {
                 WriteToLog(ex);
             }
+        }
+        public static void ResolveTasks(List<ServerReference.tbTask> tasks)
+        {
+            foreach (ServerReference.tbTask task in tasks)
+            {
+                if (task.TaskFinished != 1)
+                {
+                    Destinations = wClient.FindDestinationByTaskId(task.Id)
+                            .ToList<ServerReference.tbDestination>();
+                }
+                foreach (ServerReference.tbDestination des in Destinations)
+                {
+                    Backup backup = new Backup(des);
+                }
+            }
+        }
+        public static ServerReference.tbDaemon ReturnSelf()
+        {
+            ServerReference.tbDaemon TempDaemon = new ServerReference.tbDaemon();
+            TempDaemon.DaemonName = DaemonName;
+            TempDaemon.PcName = Environment.MachineName;
+            TempDaemon.RefreshRate = ServerRefreshRate;
+            TempDaemon.LastActive = DateTime.Now;
+            TempDaemon.IpAddress = "127.0.0.1";
+
+            return TempDaemon;
         }
 
 

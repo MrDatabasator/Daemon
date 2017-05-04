@@ -140,7 +140,7 @@ namespace BackupDaemon.ServerReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbDestination", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbDestination", Namespace="http://schemas.datacontract.org/2004/07/WcfService1", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class tbDestination : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -152,6 +152,15 @@ namespace BackupDaemon.ServerReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private BackupDaemon.ServerReference.tbTask[] LTaskField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NetDestinationPathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NetSourcePathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TaskIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
@@ -193,6 +202,45 @@ namespace BackupDaemon.ServerReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NetDestinationPath {
+            get {
+                return this.NetDestinationPathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NetDestinationPathField, value) != true)) {
+                    this.NetDestinationPathField = value;
+                    this.RaisePropertyChanged("NetDestinationPath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NetSourcePath {
+            get {
+                return this.NetSourcePathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NetSourcePathField, value) != true)) {
+                    this.NetSourcePathField = value;
+                    this.RaisePropertyChanged("NetSourcePath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TaskId {
+            get {
+                return this.TaskIdField;
+            }
+            set {
+                if ((this.TaskIdField.Equals(value) != true)) {
+                    this.TaskIdField = value;
+                    this.RaisePropertyChanged("TaskId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Type {
             get {
                 return this.TypeField;
@@ -217,15 +265,12 @@ namespace BackupDaemon.ServerReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbTask", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbTask", Namespace="http://schemas.datacontract.org/2004/07/WcfService1", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class tbTask : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BackupDaemon.ServerReference.tbDaemon DaemonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DaemonIdField;
@@ -234,7 +279,7 @@ namespace BackupDaemon.ServerReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KronExpressionField;
+        private string KornExpressionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private BackupDaemon.ServerReference.tbDestination[] LDestinationField;
@@ -255,19 +300,6 @@ namespace BackupDaemon.ServerReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public BackupDaemon.ServerReference.tbDaemon Daemon {
-            get {
-                return this.DaemonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DaemonField, value) != true)) {
-                    this.DaemonField = value;
-                    this.RaisePropertyChanged("Daemon");
-                }
             }
         }
         
@@ -298,14 +330,14 @@ namespace BackupDaemon.ServerReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string KronExpression {
+        public string KornExpression {
             get {
-                return this.KronExpressionField;
+                return this.KornExpressionField;
             }
             set {
-                if ((object.ReferenceEquals(this.KronExpressionField, value) != true)) {
-                    this.KronExpressionField = value;
-                    this.RaisePropertyChanged("KronExpression");
+                if ((object.ReferenceEquals(this.KornExpressionField, value) != true)) {
+                    this.KornExpressionField = value;
+                    this.RaisePropertyChanged("KornExpression");
                 }
             }
         }
@@ -560,6 +592,12 @@ namespace BackupDaemon.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTask", ReplyAction="http://tempuri.org/IService1/UploadTaskResponse")]
         System.Threading.Tasks.Task UploadTaskAsync(BackupDaemon.ServerReference.tbTask t);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemonReference", ReplyAction="http://tempuri.org/IService1/UploadDaemonReferenceResponse")]
+        int UploadDaemonReference(BackupDaemon.ServerReference.tbDaemon o);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemonReference", ReplyAction="http://tempuri.org/IService1/UploadDaemonReferenceResponse")]
+        System.Threading.Tasks.Task<int> UploadDaemonReferenceAsync(BackupDaemon.ServerReference.tbDaemon o);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDaemonLastActive", ReplyAction="http://tempuri.org/IService1/UpdateDaemonLastActiveResponse")]
         void UpdateDaemonLastActive(int id);
         
@@ -578,6 +616,18 @@ namespace BackupDaemon.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReference", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceResponse")]
         System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupDaemon.ServerReference.tbDaemon d);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindDestinationByTaskId", ReplyAction="http://tempuri.org/IService1/FindDestinationByTaskIdResponse")]
+        BackupDaemon.ServerReference.tbDestination[] FindDestinationByTaskId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindDestinationByTaskId", ReplyAction="http://tempuri.org/IService1/FindDestinationByTaskIdResponse")]
+        System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDestination[]> FindDestinationByTaskIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindTaskByDestinationId", ReplyAction="http://tempuri.org/IService1/FindTaskByDestinationIdResponse")]
+        BackupDaemon.ServerReference.tbTask[] FindTaskByDestinationId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindTaskByDestinationId", ReplyAction="http://tempuri.org/IService1/FindTaskByDestinationIdResponse")]
+        System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbTask[]> FindTaskByDestinationIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ExistDeamonTask", ReplyAction="http://tempuri.org/IService1/ExistDeamonTaskResponse")]
         bool ExistDeamonTask(int id);
         
@@ -595,6 +645,12 @@ namespace BackupDaemon.ServerReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NewLogMessage", ReplyAction="http://tempuri.org/IService1/NewLogMessageResponse")]
         System.Threading.Tasks.Task NewLogMessageAsync(int DaemonId, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDestinations", ReplyAction="http://tempuri.org/IService1/GetAllDestinationsResponse")]
+        BackupDaemon.ServerReference.tbDestination[] GetAllDestinations();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDestinations", ReplyAction="http://tempuri.org/IService1/GetAllDestinationsResponse")]
+        System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDestination[]> GetAllDestinationsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
         BackupDaemon.ServerReference.tbDaemon[] GetAllDaemons();
@@ -688,6 +744,14 @@ namespace BackupDaemon.ServerReference {
             return base.Channel.UploadTaskAsync(t);
         }
         
+        public int UploadDaemonReference(BackupDaemon.ServerReference.tbDaemon o) {
+            return base.Channel.UploadDaemonReference(o);
+        }
+        
+        public System.Threading.Tasks.Task<int> UploadDaemonReferenceAsync(BackupDaemon.ServerReference.tbDaemon o) {
+            return base.Channel.UploadDaemonReferenceAsync(o);
+        }
+        
         public void UpdateDaemonLastActive(int id) {
             base.Channel.UpdateDaemonLastActive(id);
         }
@@ -712,6 +776,22 @@ namespace BackupDaemon.ServerReference {
             return base.Channel.UpdateDeamonReferenceAsync(id, d);
         }
         
+        public BackupDaemon.ServerReference.tbDestination[] FindDestinationByTaskId(int id) {
+            return base.Channel.FindDestinationByTaskId(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDestination[]> FindDestinationByTaskIdAsync(int id) {
+            return base.Channel.FindDestinationByTaskIdAsync(id);
+        }
+        
+        public BackupDaemon.ServerReference.tbTask[] FindTaskByDestinationId(int id) {
+            return base.Channel.FindTaskByDestinationId(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbTask[]> FindTaskByDestinationIdAsync(int id) {
+            return base.Channel.FindTaskByDestinationIdAsync(id);
+        }
+        
         public bool ExistDeamonTask(int id) {
             return base.Channel.ExistDeamonTask(id);
         }
@@ -734,6 +814,14 @@ namespace BackupDaemon.ServerReference {
         
         public System.Threading.Tasks.Task NewLogMessageAsync(int DaemonId, string message) {
             return base.Channel.NewLogMessageAsync(DaemonId, message);
+        }
+        
+        public BackupDaemon.ServerReference.tbDestination[] GetAllDestinations() {
+            return base.Channel.GetAllDestinations();
+        }
+        
+        public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDestination[]> GetAllDestinationsAsync() {
+            return base.Channel.GetAllDestinationsAsync();
         }
         
         public BackupDaemon.ServerReference.tbDaemon[] GetAllDaemons() {

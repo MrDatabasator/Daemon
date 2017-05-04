@@ -14,6 +14,7 @@ namespace BackupDaemon
 {
     public partial class Daemon : ServiceBase
     {
+        
         private System.Timers.Timer _timer { get; set; }
         private int TaskTick = 0;
         private int FuckWotTick = 0;
@@ -30,7 +31,7 @@ namespace BackupDaemon
 
         protected override void OnStart(string[] args)
         {
-            Thread.Sleep(10000);
+            Thread.Sleep(1000);
             try
             {
                 Core.GetConfigInfo();
@@ -38,9 +39,9 @@ namespace BackupDaemon
                 Core.WriteToLog("Running on: " + Environment.MachineName);
 
             
-                Core.ConnectToWcfServer();
+                /*Core.ConnectToWcfServer();
                 Core.wClient.UploadString("Patrik neumi programovat");
-                Core.wChannelFac.Close();
+                Core.wChannelFac.Close();*/
             }
             catch(Exception ex)
             {
@@ -62,14 +63,32 @@ namespace BackupDaemon
             TaskTick++;
             if(TaskTick >= Core.ServerRefreshRate)
             {
-
+                Schedule();
             }
-            if(FuckWotTick >= 30)
+            if(FuckWotTick >= 45)
             {
                 Core.FuckWot();
                 FuckWotTick = 0;
             }
         }
+        private void Schedule()
+        {
+            Core.ConnectToWcfServer();
+            if(!Core.wClient.CheckDeamonReference(Core.Id))
+            {
+                int i = Core.wClient.UploadDaemonReference(Core.ReturnSelf());
+                Core.Id = i;
+            }
+            Core.wClient.UpdateDeamonReference(Core.Id, Core.ReturnSelf());
+            Core.wClient.UpdateDaemonLastActive(Core.Id);
+            if (Core.wClient.ExistDeamonTask(Core.Id))
+            {
+                Core.Tasks = Core.wClient.GetDeamonTask(Core.Id).ToList<ServerReference.tbTask>();
+                Core.ResolveTasks(Core.Tasks);
+            }
+            Core.wChannelFac.Close();
+        }
+        
         
     }
 }

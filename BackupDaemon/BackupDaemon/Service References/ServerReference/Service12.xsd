@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:42867/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="tbDaemon">
     <xs:sequence>
       <xs:element minOccurs="0" name="DaemonName" nillable="true" type="xs:string" />
@@ -15,8 +16,13 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="LTask" nillable="true" type="tns:ArrayOftbTask" />
+      <xs:element minOccurs="0" name="NetDestinationPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetSourcePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="tbDestination" nillable="true" type="tns:tbDestination" />
   <xs:complexType name="ArrayOftbTask">
@@ -27,15 +33,16 @@
   <xs:element name="ArrayOftbTask" nillable="true" type="tns:ArrayOftbTask" />
   <xs:complexType name="tbTask">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Daemon" nillable="true" type="tns:tbDaemon" />
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="KronExpression" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KornExpression" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LDestination" nillable="true" type="tns:ArrayOftbDestination" />
       <xs:element minOccurs="0" name="LastTaskCommit" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TaskFinished" type="xs:int" />
       <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="tbTask" nillable="true" type="tns:tbTask" />
   <xs:complexType name="ArrayOftbDestination">

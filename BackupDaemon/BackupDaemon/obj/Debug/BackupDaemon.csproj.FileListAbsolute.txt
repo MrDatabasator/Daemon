@@ -44,3 +44,12 @@ C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaem
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
 C:\Users\adasdasdasd\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.Core.dll
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.dll
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.dll
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.xml
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.Core.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.Core.xml
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.pdb
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.xml

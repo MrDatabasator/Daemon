@@ -9,8 +9,9 @@ namespace BackupDaemon
     public class Backup
     {
         ServerReference.Service1Client Client { get; set; }
-        // private Destination Destination { get; set; }
-        public Backup(/*Destination*/)
+        private ServerReference.tbDestination tbDestination { get; set; }
+
+        public Backup(ServerReference.tbDestination dest)
         {
 
         }
@@ -23,6 +24,11 @@ namespace BackupDaemon
         {
 
         }
+        public void NetBackup(string Source, string Target)
+        {
+
+        }
+        /*
         public void NETbackupFile(string SourcePath, string TargetPath)
         {
             Client = new ServerReference.Service1Client();
@@ -41,10 +47,10 @@ namespace BackupDaemon
 
             Client = new ServerReference.Service1Client();
 
-           /* if (!System.IO.Directory.Exists(TargetPath))
+            if (!System.IO.Directory.Exists(TargetPath))
             {
                 System.IO.Directory.CreateDirectory(TargetPath);
-            }*/
+            }
 
             //nemůže být move
             try
@@ -55,6 +61,6 @@ namespace BackupDaemon
             {
                 Client.NewLogMessage(Core.Id, "Backup cannot copy directory" + SourcePath + " to " + TargetPath);
             }         
-        }
+        }*/
     }
 }

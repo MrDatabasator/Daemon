@@ -1,46 +1,22 @@
-﻿28. 4. 2017 16:40:18:: DaemonTest >> Daemon started its task
-28. 4. 2017 16:40:18:: DaemonTest >> Running on: SMUDLINCIN-POCI
-28. 4. 2017 16:40:18:: DaemonTest >> Attempting to connect to: http://localhost:42867/Service1.svc
-28. 4. 2017 16:40:20:: DaemonTest >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-28. 4. 2017 17:10:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 17:40:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 18:10:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 18:40:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 19:10:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 19:40:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 20:10:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 20:40:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 21:10:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 21:40:08:: DaemonTest >> Fucked someone's gaming experience
-28. 4. 2017 22:10:09:: DaemonTest >> Fucked someone's gaming experience
-29. 4. 2017 10:33:16:: DaemonTest >> Fucked someone's gaming experience
-29. 4. 2017 11:03:16:: DaemonTest >> Fucked someone's gaming experience
-29. 4. 2017 11:33:16:: DaemonTest >> Fucked someone's gaming experience
-29. 4. 2017 11:41:19:: DaemonTest >> Daemon stopped its task
-29. 4. 2017 11:41:31:: DaemonTest >> Daemon started its task
-29. 4. 2017 11:41:31:: DaemonTest >> Running on: SMUDLINCIN-POCI
-29. 4. 2017 11:41:31:: DaemonTest >> Attempting to connect to: http://localhost:42867/Service1.svc
-29. 4. 2017 11:41:33:: DaemonTest >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-29. 4. 2017 11:42:04:: DaemonTest >> Daemon stopped its task
-29. 4. 2017 11:42:26:: DaemonFeggit >> Daemon started its task
-29. 4. 2017 11:42:26:: DaemonFeggit >> Running on: SMUDLINCIN-POCI
-29. 4. 2017 11:42:26:: DaemonFeggit >> Attempting to connect to: http://localhost:42867/Service1.svc
-29. 4. 2017 11:42:28:: DaemonFeggit >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-29. 4. 2017 11:42:43:: DaemonFeggit >> Daemon stopped its task
-29. 4. 2017 15:14:31:: Test >> Soubor C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
-29. 4. 2017 15:14:52:: Test >> Daemon stopped its task
-29. 4. 2017 15:15:04:: Test >> Daemon started its task
-29. 4. 2017 15:15:04:: Test >> Running on: SMUDLINCIN-POCI
-29. 4. 2017 15:15:04:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
-29. 4. 2017 15:15:06:: Test >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-29. 4. 2017 15:15:49:: Test >> Daemon stopped its task
-29. 4. 2017 15:16:01:: Test >> Daemon started its task
-29. 4. 2017 15:16:01:: Test >> Running on: SMUDLINCIN-POCI
-29. 4. 2017 15:16:01:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
-29. 4. 2017 15:16:03:: Test >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-29. 4. 2017 15:16:18:: Test >> Daemon stopped its task
-29. 4. 2017 15:17:24:: Daemon69 >> Daemon started its task
-29. 4. 2017 15:17:24:: Daemon69 >> Running on: SMUDLINCIN-POCI
-29. 4. 2017 15:17:24:: Daemon69 >> Attempting to connect to: http://localhost:42867/Service1.svc
-29. 4. 2017 15:17:26:: Daemon69 >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
-29. 4. 2017 15:17:30:: Daemon69 >> Daemon stopped its task
+﻿
+2. 5. 2017 21:30:47:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 15:08:40:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 15:54:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 16:39:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 17:24:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 18:09:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 18:54:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 19:39:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 20:24:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 21:09:05:: Daemon69 >> Fucked someone's gaming experience
+3. 5. 2017 21:23:50:: Daemon69 >> Daemon started its task
+3. 5. 2017 21:23:50:: Daemon69 >> Running on: SMUDLINCIN-POCI
+3. 5. 2017 21:23:51:: Daemon69 >> Attempting to connect to: http://localhost:42867/Service1.svc
+3. 5. 2017 21:24:05:: Daemon69 >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
+4. 5. 2017 15:48:05:: Daemon69 >> Daemon started its task
+4. 5. 2017 15:48:05:: Daemon69 >> Running on: SMUDLINCIN-POCI
+4. 5. 2017 15:48:05:: Daemon69 >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 5. 2017 15:48:13:: Daemon69 >> Na: http://localhost:42867/Service1.svc neposlouchal koncový bod, který by mohl přijmout zprávu. Často to způsobuje nesprávná adresa nebo akce SOAP. Další informace zjistíte podle hodnoty vlastnosti InnerException (pokud ji má).
+4. 5. 2017 16:32:53:: Daemon69 >> Fucked someone's gaming experience
+4. 5. 2017 17:17:53:: Daemon69 >> Fucked someone's gaming experience
+4. 5. 2017 18:02:53:: Daemon69 >> Fucked someone's gaming experience

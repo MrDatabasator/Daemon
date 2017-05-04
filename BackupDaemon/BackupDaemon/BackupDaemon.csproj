@@ -96,6 +96,9 @@
     <None Include="Service References\ServerReference\BackupDaemon.ServerReference.tbDaemon.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServerReference\BackupDaemon.ServerReference.tbDestination.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServerReference\BackupDaemon.ServerReference.tbTask.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
