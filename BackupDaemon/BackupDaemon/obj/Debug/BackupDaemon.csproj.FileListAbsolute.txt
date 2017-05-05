@@ -53,3 +53,4 @@ C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Log
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Common.Logging.Core.xml
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.pdb
 C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.xml
+X:\PROG\backupsw\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
