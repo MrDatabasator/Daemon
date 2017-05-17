@@ -14,6 +14,7 @@
   <xs:element name="tbDaemon" nillable="true" type="tns:tbDaemon" />
   <xs:complexType name="tbDestination">
     <xs:sequence>
+      <xs:element minOccurs="0" name="FullBackup" type="xs:boolean" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="LTask" nillable="true" type="tns:ArrayOftbTask" />
       <xs:element minOccurs="0" name="NetDestinationPath" nillable="true" type="xs:string" />
@@ -38,7 +39,7 @@
       <xs:element minOccurs="0" name="KornExpression" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LDestination" nillable="true" type="tns:ArrayOftbDestination" />
       <xs:element minOccurs="0" name="LastTaskCommit" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="TaskFinished" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskFinished" type="xs:boolean" />
       <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
     </xs:sequence>
     <xs:attribute ref="ser:Id" />
@@ -53,7 +54,6 @@
   <xs:element name="ArrayOftbDestination" nillable="true" type="tns:ArrayOftbDestination" />
   <xs:complexType name="tbLog">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Daemon" nillable="true" type="tns:tbDaemon" />
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />

@@ -148,6 +148,9 @@ namespace BackupDaemon.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FullBackupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -172,6 +175,19 @@ namespace BackupDaemon.ServerReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool FullBackup {
+            get {
+                return this.FullBackupField;
+            }
+            set {
+                if ((this.FullBackupField.Equals(value) != true)) {
+                    this.FullBackupField = value;
+                    this.RaisePropertyChanged("FullBackup");
+                }
             }
         }
         
@@ -288,7 +304,7 @@ namespace BackupDaemon.ServerReference {
         private System.DateTime LastTaskCommitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TaskFinishedField;
+        private bool TaskFinishedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TaskNameField;
@@ -369,7 +385,7 @@ namespace BackupDaemon.ServerReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TaskFinished {
+        public bool TaskFinished {
             get {
                 return this.TaskFinishedField;
             }
@@ -414,9 +430,6 @@ namespace BackupDaemon.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BackupDaemon.ServerReference.tbDaemon DaemonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DaemonIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -432,19 +445,6 @@ namespace BackupDaemon.ServerReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public BackupDaemon.ServerReference.tbDaemon Daemon {
-            get {
-                return this.DaemonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DaemonField, value) != true)) {
-                    this.DaemonField = value;
-                    this.RaisePropertyChanged("Daemon");
-                }
             }
         }
         
@@ -658,6 +658,30 @@ namespace BackupDaemon.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
         System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDaemon[]> GetAllDaemonsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
+        int UploadTaskReference(BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
+        System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteTask", ReplyAction="http://tempuri.org/IService1/DeleteTaskResponse")]
+        void DeleteTask(BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteTask", ReplyAction="http://tempuri.org/IService1/DeleteTaskResponse")]
+        System.Threading.Tasks.Task DeleteTaskAsync(BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteDestination", ReplyAction="http://tempuri.org/IService1/DeleteDestinationResponse")]
+        void DeleteDestination(BackupDaemon.ServerReference.tbDestination d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteDestination", ReplyAction="http://tempuri.org/IService1/DeleteDestinationResponse")]
+        System.Threading.Tasks.Task DeleteDestinationAsync(BackupDaemon.ServerReference.tbDestination d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AutoDeleteTask", ReplyAction="http://tempuri.org/IService1/AutoDeleteTaskResponse")]
+        void AutoDeleteTask(BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AutoDeleteTask", ReplyAction="http://tempuri.org/IService1/AutoDeleteTaskResponse")]
+        System.Threading.Tasks.Task AutoDeleteTaskAsync(BackupDaemon.ServerReference.tbTask t);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
         BackupDaemon.ServerReference.tbDaemon GetDaemon(BackupDaemon.ServerReference.tbDaemon o);
         
@@ -830,6 +854,38 @@ namespace BackupDaemon.ServerReference {
         
         public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDaemon[]> GetAllDaemonsAsync() {
             return base.Channel.GetAllDaemonsAsync();
+        }
+        
+        public int UploadTaskReference(BackupDaemon.ServerReference.tbTask t) {
+            return base.Channel.UploadTaskReference(t);
+        }
+        
+        public System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupDaemon.ServerReference.tbTask t) {
+            return base.Channel.UploadTaskReferenceAsync(t);
+        }
+        
+        public void DeleteTask(BackupDaemon.ServerReference.tbTask t) {
+            base.Channel.DeleteTask(t);
+        }
+        
+        public System.Threading.Tasks.Task DeleteTaskAsync(BackupDaemon.ServerReference.tbTask t) {
+            return base.Channel.DeleteTaskAsync(t);
+        }
+        
+        public void DeleteDestination(BackupDaemon.ServerReference.tbDestination d) {
+            base.Channel.DeleteDestination(d);
+        }
+        
+        public System.Threading.Tasks.Task DeleteDestinationAsync(BackupDaemon.ServerReference.tbDestination d) {
+            return base.Channel.DeleteDestinationAsync(d);
+        }
+        
+        public void AutoDeleteTask(BackupDaemon.ServerReference.tbTask t) {
+            base.Channel.AutoDeleteTask(t);
+        }
+        
+        public System.Threading.Tasks.Task AutoDeleteTaskAsync(BackupDaemon.ServerReference.tbTask t) {
+            return base.Channel.AutoDeleteTaskAsync(t);
         }
         
         public BackupDaemon.ServerReference.tbDaemon GetDaemon(BackupDaemon.ServerReference.tbDaemon o) {

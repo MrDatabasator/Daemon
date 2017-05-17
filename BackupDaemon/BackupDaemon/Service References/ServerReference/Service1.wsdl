@@ -103,6 +103,30 @@
   <wsdl:message name="IService1_GetAllDaemons_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllDaemonsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UploadTaskReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskReference" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadTaskReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteDestination_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDestination" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteDestination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDestinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AutoDeleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoDeleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AutoDeleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoDeleteTaskResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDaemon_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDaemon" />
   </wsdl:message>
@@ -185,6 +209,22 @@
     <wsdl:operation name="GetAllDaemons">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllDaemons" message="tns:IService1_GetAllDaemons_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllDaemonsResponse" message="tns:IService1_GetAllDaemons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTaskReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadTaskReference" message="tns:IService1_UploadTaskReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadTaskReferenceResponse" message="tns:IService1_UploadTaskReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteTask" message="tns:IService1_DeleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteTaskResponse" message="tns:IService1_DeleteTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDestination">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteDestination" message="tns:IService1_DeleteDestination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteDestinationResponse" message="tns:IService1_DeleteDestination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoDeleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AutoDeleteTask" message="tns:IService1_AutoDeleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AutoDeleteTaskResponse" message="tns:IService1_AutoDeleteTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDaemon">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDaemon" message="tns:IService1_GetDaemon_InputMessage" />
@@ -338,6 +378,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllDaemons">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllDaemons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTaskReference">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadTaskReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTask">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDestination">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteDestination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoDeleteTask">
+      <soap:operation soapAction="http://tempuri.org/IService1/AutoDeleteTask" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

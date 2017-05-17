@@ -94,7 +94,7 @@ namespace BackupDaemon
         {
             foreach (ServerReference.tbTask task in tasks)
             {
-                if (task.TaskFinished != 1)
+                if (!task.TaskFinished)
                 {
                     Destinations = wClient.FindDestinationByTaskId(task.Id)
                             .ToList<ServerReference.tbDestination>();

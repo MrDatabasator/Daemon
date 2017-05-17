@@ -1,4 +1,5 @@
-﻿
+﻿using Quartz;
+using Quartz.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace BackupDaemon
         private static List<ServerReference.tbTask> Tasks { get; set; }
 
 
+
         static void RefreshTasks(List<ServerReference.tbTask> NewTasks)
         {
             foreach(ServerReference.tbTask task in NewTasks)
@@ -27,7 +29,7 @@ namespace BackupDaemon
         }
         static void ResolveTasks()
         {
-
+            
         }
     }
 }
