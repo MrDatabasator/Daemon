@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Quartz;
+using Quartz.Impl;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
@@ -14,6 +16,8 @@ namespace BackupDaemon
         public static List<ServerReference.tbTask> Tasks { get; set; }
 
         public static List<ServerReference.tbDestination> Destinations { get; set; }
+
+        public static IScheduler Scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
         public static int Id = 0;
 

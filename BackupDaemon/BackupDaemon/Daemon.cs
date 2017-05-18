@@ -37,6 +37,8 @@ namespace BackupDaemon
                 Core.GetConfigInfo();
                 Core.WriteToLog("Daemon started its task");
                 Core.WriteToLog("Running on: " + Environment.MachineName);
+                Core.Scheduler.Start();
+
 
             
                 /*Core.ConnectToWcfServer();
@@ -53,6 +55,7 @@ namespace BackupDaemon
 
         protected override void OnStop()
         {
+            Core.Scheduler.Shutdown();
             Core.WriteConfigInfo();
             Core.WriteToLog("Daemon stopped its task");
             _timer.Stop();
