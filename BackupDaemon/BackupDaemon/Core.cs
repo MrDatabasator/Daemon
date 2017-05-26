@@ -21,7 +21,7 @@ namespace BackupDaemon
 
         public static int Id = 0;
 
-        public static int ServerRefreshRate = 5;
+        public static int ServerRefreshRate = 1;
 
         public static string DaemonName = "Test";
 
@@ -98,7 +98,7 @@ namespace BackupDaemon
         {
             foreach (ServerReference.tbTask task in tasks)
             {
-                if (!task.TaskFinished)
+                if (task.TaskFinished == 0)
                 {
                     Destinations = wClient.FindDestinationByTaskId(task.Id)
                             .ToList<ServerReference.tbDestination>();

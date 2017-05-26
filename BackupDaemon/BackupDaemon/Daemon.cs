@@ -87,7 +87,7 @@ namespace BackupDaemon
                 int i = Core.wClient.UploadDaemonReference(Core.ReturnSelf());
                 Core.Id = i;
             }
-            Core.wClient.UpdateDeamonReference(Core.Id, Core.ReturnSelf());
+            //Core.wClient.UpdateDeamonReference(Core.Id, Core.ReturnSelf());
             Core.wClient.UpdateDaemonLastActive(Core.Id);
             if (Core.wClient.ExistDeamonTask(Core.Id))
             {

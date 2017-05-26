@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BackupDaemon
@@ -16,7 +17,9 @@ namespace BackupDaemon
         {
 #if DEBUG
             Daemon d = new Daemon();
-            d.Start();
+            Thread t = new Thread(new ThreadStart(d.Start));
+            t.Start();
+            Console.ReadKey();
 #else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]

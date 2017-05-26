@@ -41,7 +41,7 @@ namespace BackupDaemon
             request.Method = WebRequestMethods.Ftp.UploadFile;
             request.Credentials = new NetworkCredential(tbDestination.FtpUsername, tbDestination.FtpPassword);
 
-            StreamReader sourceStream = new StreamReader(F);
+            StreamReader sourceStream = new StreamReader(tbDestination.NetSourcePath);
             byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
             sourceStream.Close();
             request.ContentLength = fileContents.Length;

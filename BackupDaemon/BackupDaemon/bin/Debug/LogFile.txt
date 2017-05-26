@@ -22,3 +22,11 @@
 4. 5. 2017 18:02:53:: Daemon69 >> Fucked someone's gaming experience
 26.5.2017 10:15:02:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
 26.5.2017 10:15:28:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+26.5.2017 10:30:27:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+26.5.2017 10:30:50:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+26.5.2017 10:31:49:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+26.5.2017 10:32:49:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+26.5.2017 10:35:19:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+26.5.2017 10:36:18:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+26.5.2017 10:39:47:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+26.5.2017 10:40:45:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
