@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
+
 namespace BackupDaemon
 {
     public class Backup
@@ -13,17 +15,45 @@ namespace BackupDaemon
 
         public Backup(ServerReference.tbDestination dest)
         {
-            //if (dest.Type.ToLower() == "net")
-            NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
+            string Ftp = "ftp://66.220.9.50:21/FTP/";
+            string File = "FTP.txt";
+
+            if (dest.Type.ToLower() == "net")
+                NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
+            else if (dest.Type.ToLower() == "ftp")
+                FTPbackup(Ftp, File);
+            else
+                Console.WriteLine("Wrong Type of backup");
+            Console.ReadLine();
+
+            
         }
 
         public void SSHbackup()
         {
 
         }
-        public void FTPbackup()
+        public void FTPbackup(string A, string F)
         {
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(A + F));
 
+            request.Method = WebRequestMethods.Ftp.UploadFile;
+            request.Credentials = new NetworkCredential("MrDatabasator", "nedamheslo");
+
+            StreamReader sourceStream = new StreamReader("FTP.txt");
+            byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
+            sourceStream.Close();
+            request.ContentLength = fileContents.Length;
+
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(fileContents, 0, fileContents.Length);
+            requestStream.Close();
+
+            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+            Console.WriteLine("Upload File Complete, status {0}", response.StatusDescription);
+
+            response.Close();
         }
         public void NetBackup(string Source, string Target)
         {

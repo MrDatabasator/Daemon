@@ -72,3 +72,6 @@ C:\backupsw\daemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.pdb
 C:\backupsw\daemon\BackupDaemon\BackupDaemon\bin\Debug\Quartz.xml
 C:\backupsw\daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
 C:\backupsw\daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
