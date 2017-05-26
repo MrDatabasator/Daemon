@@ -15,10 +15,11 @@ namespace BackupDaemon
 
         public Backup(ServerReference.tbDestination dest)
         {
-            string Ftp = "ftp://66.220.9.50:21/FTP/";
-            string File = "FTP.txt";
+            tbDestination = dest;
+            string Ftp = dest.FtpServerAddress;
+            string File = dest.NetDestinationPath;
 
-            if (dest.Type.ToLower() == "net")
+            if (dest.Type.ToLower() == "local")
                 NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
             else if (dest.Type.ToLower() == "ftp")
                 FTPbackup(Ftp, File);
@@ -35,12 +36,12 @@ namespace BackupDaemon
         }
         public void FTPbackup(string A, string F)
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(A + F));
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://"+ A +"/"+ F));
 
             request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential("MrDatabasator", "nedamheslo");
+            request.Credentials = new NetworkCredential(tbDestination.FtpUsername, tbDestination.FtpPassword);
 
-            StreamReader sourceStream = new StreamReader("FTP.txt");
+            StreamReader sourceStream = new StreamReader(F);
             byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
             sourceStream.Close();
             request.ContentLength = fileContents.Length;

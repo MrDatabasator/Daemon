@@ -14,12 +14,17 @@ namespace BackupDaemon
         /// </summary>
         static void Main()
         {
+#if DEBUG
+            Daemon d = new Daemon();
+            d.Start();
+#else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
                 new Daemon()
             };
             ServiceBase.Run(ServicesToRun);
+#endif
         }
     }
 }

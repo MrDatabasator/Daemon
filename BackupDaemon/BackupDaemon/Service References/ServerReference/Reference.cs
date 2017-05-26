@@ -148,6 +148,15 @@ namespace BackupDaemon.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FtpPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FtpServerAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FtpUsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool FullBackupField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -175,6 +184,45 @@ namespace BackupDaemon.ServerReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FtpPassword {
+            get {
+                return this.FtpPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FtpPasswordField, value) != true)) {
+                    this.FtpPasswordField = value;
+                    this.RaisePropertyChanged("FtpPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FtpServerAddress {
+            get {
+                return this.FtpServerAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FtpServerAddressField, value) != true)) {
+                    this.FtpServerAddressField = value;
+                    this.RaisePropertyChanged("FtpServerAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FtpUsername {
+            get {
+                return this.FtpUsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FtpUsernameField, value) != true)) {
+                    this.FtpUsernameField = value;
+                    this.RaisePropertyChanged("FtpUsername");
+                }
             }
         }
         
@@ -304,7 +352,7 @@ namespace BackupDaemon.ServerReference {
         private System.DateTime LastTaskCommitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool TaskFinishedField;
+        private int TaskFinishedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TaskNameField;
@@ -385,7 +433,7 @@ namespace BackupDaemon.ServerReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool TaskFinished {
+        public int TaskFinished {
             get {
                 return this.TaskFinishedField;
             }

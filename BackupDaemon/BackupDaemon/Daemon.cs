@@ -29,6 +29,11 @@ namespace BackupDaemon
             _timer.Elapsed += new ElapsedEventHandler(_timer_Tick);
         }
 
+        public void Start()
+        {
+            this.OnStart(null);
+        }
+
         protected override void OnStart(string[] args)
         {
             Thread.Sleep(1000);
