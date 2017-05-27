@@ -19,7 +19,7 @@ namespace BackupDaemon
 
         public static IScheduler Scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
-        public static int Id = 0;
+        public static int Id = 1;
 
         public static int ServerRefreshRate = 1;
 
@@ -78,8 +78,7 @@ namespace BackupDaemon
             wBinding = new BasicHttpBinding();
             wAddress = new EndpointAddress(wStringAddress);
             WriteToLog("Attempting to connect to: " + wStringAddress);
-            wChannelFac = new ChannelFactory<ServerReference.IService1>(wBinding, wAddress);  
-
+            wChannelFac = new ChannelFactory<ServerReference.IService1>(wBinding, wAddress);
             wClient = wChannelFac.CreateChannel(); 
         }
         public static void FuckWot()
@@ -102,11 +101,12 @@ namespace BackupDaemon
                 {
                     Destinations = wClient.FindDestinationByTaskId(task.Id)
                             .ToList<ServerReference.tbDestination>();
+                    foreach (ServerReference.tbDestination des in Destinations)
+                    {
+                        Backup backup = new Backup(des);
+                    }
                 }
-                foreach (ServerReference.tbDestination des in Destinations)
-                {
-                    Backup backup = new Backup(des);
-                }
+               
             }
         }
         public static ServerReference.tbDaemon ReturnSelf()

@@ -92,3 +92,5 @@ C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\Bac
 C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.Daemon.resources
 C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.ProjectInstaller.resources
 C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\DotNetZip.dll
+C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\DotNetZip.xml

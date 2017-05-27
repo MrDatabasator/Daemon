@@ -36,6 +36,7 @@ namespace BackupDaemon
         }
         public void FTPbackup(string A, string F)
         {
+            Console.WriteLine("Beginning Ftp backup on: ftp://" + A + "/" + F);
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://"+ A +"/"+ F));
 
             request.Method = WebRequestMethods.Ftp.UploadFile;
@@ -60,7 +61,7 @@ namespace BackupDaemon
         {
             // Get the subdirectories for the specified directory.
             DirectoryInfo dir = new DirectoryInfo(Source);
-
+            Console.WriteLine("Beginning new Local backup to:" + Target);
             if (!dir.Exists)
             {
                 throw new DirectoryNotFoundException(
@@ -92,6 +93,7 @@ namespace BackupDaemon
                     NetBackup(subdir.FullName, temppath);
                 }
             }
+            Console.WriteLine("Local backup done");
         }
         /*
         public void NETbackupFile(string SourcePath, string TargetPath)

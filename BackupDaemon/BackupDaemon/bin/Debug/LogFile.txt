@@ -30,3 +30,79 @@
 26.5.2017 10:36:18:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
 26.5.2017 10:39:47:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
 26.5.2017 10:40:45:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:11:07:: Test >> Soubor C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+27. 5. 2017 10:17:54:: Test >> Soubor C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+27. 5. 2017 10:23:08:: Test >> Soubor C:\Users\st1\Desktop\BackupDaemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+27. 5. 2017 10:26:44:: Daemon1 >> Daemon started its task
+27. 5. 2017 10:26:44:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 10:29:03:: Daemon1 >> Daemon started its task
+27. 5. 2017 10:29:03:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 10:30:39:: Daemon1 >> Daemon started its task
+27. 5. 2017 10:30:39:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 10:31:38:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:33:05:: Daemon1 >> Daemon started its task
+27. 5. 2017 10:33:05:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 10:33:43:: Daemon1 >> Daemon started its task
+27. 5. 2017 10:33:43:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 10:34:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:35:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:36:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:37:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:38:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:39:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:40:42:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:41:43:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:42:44:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:43:45:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:44:46:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:45:47:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:46:48:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:47:49:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:48:50:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:49:51:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:50:52:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:51:53:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:52:54:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:53:55:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:54:56:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 10:55:57:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:00:36:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:00:36:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:01:10:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:01:10:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:02:09:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:03:09:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:04:04:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:04:04:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:08:18:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:08:18:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:09:26:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:09:26:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:10:25:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:11:25:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:12:25:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:13:25:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:14:26:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:15:27:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:16:28:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:17:30:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:17:30:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:18:28:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:19:28:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:23:56:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:23:56:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:24:55:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:26:12:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:27:00:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:28:13:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:28:13:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:31:12:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:32:00:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:32:00:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:34:59:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:35:59:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+27. 5. 2017 11:49:02:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:49:02:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:49:12:: Daemon1 >> Daemon started its task
+27. 5. 2017 11:49:12:: Daemon1 >> Running on: SMUDLINCIN-POCI
+27. 5. 2017 11:52:11:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
