@@ -16,17 +16,16 @@ namespace BackupDaemon
         public Backup(ServerReference.tbDestination dest)
         {
             tbDestination = dest;
-            string Ftp = dest.FtpServerAddress;
-            string File = dest.NetDestinationPath;
+            string _SourceFolder = dest.NetSourcePath;
+            string _DestinationFolder = dest.NetDestinationPath;
+            string _ServerAddress = dest.FtpServerAddress;
 
             if (dest.Type.ToLower() == "local")
                 NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
             else if (dest.Type.ToLower() == "ftp")
-                FTPbackup(Ftp, File);
+                FTPbackup(_SourceFolder, _DestinationFolder, _ServerAddress);
             else
                 Console.WriteLine("Wrong Type of backup");
-            Console.ReadLine();
-
             
         }
 
@@ -34,15 +33,15 @@ namespace BackupDaemon
         {
 
         }
-        public void FTPbackup(string A, string F)
+        public void FTPbackup(string SourceFolder, string DestinationFolder, string ServerAddress)
         {
-            Console.WriteLine("Beginning Ftp backup on: ftp://" + A + "/" + F);
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://"+ A +"/"+ F));
+            Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://"+ ServerAddress + "/"+ DestinationFolder));
 
             request.Method = WebRequestMethods.Ftp.UploadFile;
             request.Credentials = new NetworkCredential(tbDestination.FtpUsername, tbDestination.FtpPassword);
 
-            StreamReader sourceStream = new StreamReader(tbDestination.NetSourcePath);
+            StreamReader sourceStream = new StreamReader(SourceFolder);
             byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
             sourceStream.Close();
             request.ContentLength = fileContents.Length;
