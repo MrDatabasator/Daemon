@@ -106,3 +106,4 @@
 27. 5. 2017 11:49:12:: Daemon1 >> Daemon started its task
 27. 5. 2017 11:49:12:: Daemon1 >> Running on: SMUDLINCIN-POCI
 27. 5. 2017 11:52:11:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+30.5.2017 12:33:00:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.

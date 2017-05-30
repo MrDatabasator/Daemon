@@ -33,6 +33,27 @@ namespace BackupDaemon
         {
 
         }
+        void RecureDirectory(DirectoryInfo directory)
+        {
+            FileInfo[] files = null;
+            DirectoryInfo[] subDirectories = null;
+            files = directory.GetFiles("*.*");
+            if (files != null)
+            {
+                foreach (FileInfo file in files)
+                {
+                    string fileName = file.Name;
+                    FileStream fileStream = file.OpenRead();
+                    byte[] fileContents = new byte[fileStream.Length];
+                    fileStream.Read(fileContents, 0, (int)fileStream.Length);
+                }
+                subDirectories = directory.GetDirectories();
+                foreach (DirectoryInfo dirInfo in subDirectories)
+                {
+                    RecureDirectory(dirInfo);
+                }
+            }
+        }
         public void FTPbackup(string SourceFolder, string DestinationFolder, string ServerAddress)
         {
             Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
