@@ -91,6 +91,24 @@
   <wsdl:message name="IService1_NewLogMessage_OutputMessage">
     <wsdl:part name="parameters" element="tns:NewLogMessageResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateTaskFinished_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskFinished" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTaskFinished_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskFinishedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTaskRefrence_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskRefrence" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTaskRefrence_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskRefrenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTaskLastCommit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskLastCommit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTaskLastCommit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskLastCommitResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetAllDestinations_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllDestinations" />
   </wsdl:message>
@@ -201,6 +219,18 @@
     <wsdl:operation name="NewLogMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/NewLogMessage" message="tns:IService1_NewLogMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/NewLogMessageResponse" message="tns:IService1_NewLogMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskFinished">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateTaskFinished" message="tns:IService1_UpdateTaskFinished_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateTaskFinishedResponse" message="tns:IService1_UpdateTaskFinished_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskRefrence">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateTaskRefrence" message="tns:IService1_UpdateTaskRefrence_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateTaskRefrenceResponse" message="tns:IService1_UpdateTaskRefrence_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskLastCommit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateTaskLastCommit" message="tns:IService1_UpdateTaskLastCommit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateTaskLastCommitResponse" message="tns:IService1_UpdateTaskLastCommit_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllDestinations">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllDestinations" message="tns:IService1_GetAllDestinations_InputMessage" />
@@ -360,6 +390,33 @@
     </wsdl:operation>
     <wsdl:operation name="NewLogMessage">
       <soap:operation soapAction="http://tempuri.org/IService1/NewLogMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskFinished">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateTaskFinished" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskRefrence">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateTaskRefrence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskLastCommit">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateTaskLastCommit" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

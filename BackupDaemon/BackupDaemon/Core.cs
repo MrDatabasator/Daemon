@@ -19,11 +19,11 @@ namespace BackupDaemon
 
         public static IScheduler Scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
-        public static int Id = 1;
+        public static int Id = 0;
 
         public static int ServerRefreshRate = 1;
 
-        public static string DaemonName = "Test";
+        public static string DaemonName = "TestDaemon";
 
         public static string wStringAddress = "http://localhost:42867/Service1.svc";
 
@@ -105,6 +105,8 @@ namespace BackupDaemon
                     {
                         Backup backup = new Backup(des);
                     }
+                    wClient.UpdateTaskLastCommit(Core.Id);
+                    wClient.UpdateTaskFinished(Core.Id, true);
                 }
                
             }
