@@ -87,6 +87,7 @@ namespace BackupDaemon
                 // Get the subdirectories for the specified directory.
                 DirectoryInfo dir = new DirectoryInfo(Source);
                 Console.WriteLine("Beginning new Local backup to:" + Target);
+                Core.WriteToLog("Beginning new Local backup to: " + Target);
                 if (!dir.Exists)
                 {
                     throw new DirectoryNotFoundException(
@@ -129,6 +130,8 @@ namespace BackupDaemon
                         "Source file does not exist or could not be found: "
                         + Source);
                 }
+                Core.WriteToLog("Beginning new Local backup to: " + Target);
+                Console.WriteLine("Beginning new Local backup to:" + Target);
                 string temppath = Path.Combine(Target, file.Name);
                 file.CopyTo(temppath, true);
                 
