@@ -183,6 +183,44 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateTaskFinished">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="finished" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskFinishedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskRefrence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q10:tbTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskRefrenceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskLastCommit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskLastCommitResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllDestinations">
     <xs:complexType>
       <xs:sequence />
@@ -191,7 +229,7 @@
   <xs:element name="GetAllDestinationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDestinationsResult" nillable="true" type="q10:ArrayOftbDestination" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDestinationsResult" nillable="true" type="q11:ArrayOftbDestination" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -203,14 +241,14 @@
   <xs:element name="GetAllDaemonsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDaemonsResult" nillable="true" type="q11:ArrayOftbDaemon" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDaemonsResult" nillable="true" type="q12:ArrayOftbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UploadTaskReference">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q12:tbTask" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q13:tbTask" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -224,7 +262,7 @@
   <xs:element name="DeleteTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q13:tbTask" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q14:tbTask" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -236,7 +274,7 @@
   <xs:element name="DeleteDestination">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="d" nillable="true" type="q14:tbDestination" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="d" nillable="true" type="q15:tbDestination" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -248,7 +286,7 @@
   <xs:element name="AutoDeleteTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q15:tbTask" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q16:tbTask" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -260,14 +298,14 @@
   <xs:element name="GetDaemon">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="o" nillable="true" type="q16:tbDaemon" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="o" nillable="true" type="q17:tbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDaemonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDaemonResult" nillable="true" type="q17:tbDaemon" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDaemonResult" nillable="true" type="q18:tbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -288,14 +326,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q18:CompositeType" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q19:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q19:CompositeType" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q20:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

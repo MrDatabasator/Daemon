@@ -694,6 +694,24 @@ namespace BackupDaemon.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NewLogMessage", ReplyAction="http://tempuri.org/IService1/NewLogMessageResponse")]
         System.Threading.Tasks.Task NewLogMessageAsync(int DaemonId, string message);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTaskFinished", ReplyAction="http://tempuri.org/IService1/UpdateTaskFinishedResponse")]
+        void UpdateTaskFinished(int id, bool finished);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTaskFinished", ReplyAction="http://tempuri.org/IService1/UpdateTaskFinishedResponse")]
+        System.Threading.Tasks.Task UpdateTaskFinishedAsync(int id, bool finished);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTaskRefrence", ReplyAction="http://tempuri.org/IService1/UpdateTaskRefrenceResponse")]
+        void UpdateTaskRefrence(int id, BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTaskRefrence", ReplyAction="http://tempuri.org/IService1/UpdateTaskRefrenceResponse")]
+        System.Threading.Tasks.Task UpdateTaskRefrenceAsync(int id, BackupDaemon.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTaskLastCommit", ReplyAction="http://tempuri.org/IService1/UpdateTaskLastCommitResponse")]
+        void UpdateTaskLastCommit(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTaskLastCommit", ReplyAction="http://tempuri.org/IService1/UpdateTaskLastCommitResponse")]
+        System.Threading.Tasks.Task UpdateTaskLastCommitAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDestinations", ReplyAction="http://tempuri.org/IService1/GetAllDestinationsResponse")]
         BackupDaemon.ServerReference.tbDestination[] GetAllDestinations();
         
@@ -886,6 +904,30 @@ namespace BackupDaemon.ServerReference {
         
         public System.Threading.Tasks.Task NewLogMessageAsync(int DaemonId, string message) {
             return base.Channel.NewLogMessageAsync(DaemonId, message);
+        }
+        
+        public void UpdateTaskFinished(int id, bool finished) {
+            base.Channel.UpdateTaskFinished(id, finished);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTaskFinishedAsync(int id, bool finished) {
+            return base.Channel.UpdateTaskFinishedAsync(id, finished);
+        }
+        
+        public void UpdateTaskRefrence(int id, BackupDaemon.ServerReference.tbTask t) {
+            base.Channel.UpdateTaskRefrence(id, t);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTaskRefrenceAsync(int id, BackupDaemon.ServerReference.tbTask t) {
+            return base.Channel.UpdateTaskRefrenceAsync(id, t);
+        }
+        
+        public void UpdateTaskLastCommit(int id) {
+            base.Channel.UpdateTaskLastCommit(id);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTaskLastCommitAsync(int id) {
+            return base.Channel.UpdateTaskLastCommitAsync(id);
         }
         
         public BackupDaemon.ServerReference.tbDestination[] GetAllDestinations() {

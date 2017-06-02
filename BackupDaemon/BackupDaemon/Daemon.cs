@@ -97,7 +97,7 @@ namespace BackupDaemon
             if (Core.wClient.ExistDeamonTask(Core.Id))
             {
                 Console.WriteLine("Downloading tasks to resolve");
-                Core.Tasks = Core.wClient.GetDeamonTask(Core.Id).ToList<ServerReference.tbTask>();
+                Core.Tasks = Core.wClient.GetDeamonTask(Core.Id).Where(x => x.TaskFinished != 1).ToList<ServerReference.tbTask>();
                 Core.ResolveTasks(Core.Tasks);
             }
             Console.WriteLine("Closing Connection");
