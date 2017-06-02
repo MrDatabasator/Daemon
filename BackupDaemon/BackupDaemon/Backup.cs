@@ -123,6 +123,12 @@ namespace BackupDaemon
             else
             {
                 FileInfo file = new FileInfo(Source);
+                if (!file.Exists)
+                {
+                    throw new FileNotFoundException(
+                        "Source file does not exist or could not be found: "
+                        + Source);
+                }
                 string temppath = Path.Combine(Target, file.Name);
                 file.CopyTo(temppath, true);
                 
