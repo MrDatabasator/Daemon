@@ -132,3 +132,20 @@
 2.6.2017 9:30:49:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
 2.6.2017 9:31:38:: Test >> Daemon started its task
 2.6.2017 9:31:38:: Test >> Running on: L108PC15
+2.6.2017 10:11:39:: Test >> Daemon started its task
+2.6.2017 10:11:39:: Test >> Running on: L108PC14
+2.6.2017 10:12:38:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:13:38:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:14:38:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:15:38:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:18:03:: Test >> Daemon started its task
+2.6.2017 10:18:03:: Test >> Running on: L108PC14
+2.6.2017 10:19:02:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:20:02:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:21:02:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:22:19:: TestDaemon >> Daemon started its task
+2.6.2017 10:22:19:: TestDaemon >> Running on: L108PC14
+2.6.2017 10:22:32:: TestDaemon >> Daemon started its task
+2.6.2017 10:22:32:: TestDaemon >> Running on: L108PC14
+2.6.2017 10:23:31:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 10:24:31:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc

@@ -19,7 +19,7 @@ namespace BackupDaemon
 
         public static IScheduler Scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
-        public static int Id = 0;
+        public static int Id = 6;
 
         public static int ServerRefreshRate = 1;
 
@@ -97,18 +97,14 @@ namespace BackupDaemon
         {
             foreach (ServerReference.tbTask task in tasks)
             {
-                if (task.TaskFinished == 0)
+                Destinations = wClient.FindDestinationByTaskId(task.Id)
+                        .ToList<ServerReference.tbDestination>();
+                wClient.UpdateTaskLastCommit(Core.Id);
+                wClient.UpdateTaskFinished(Core.Id, true);
+                foreach (ServerReference.tbDestination des in Destinations)
                 {
-                    Destinations = wClient.FindDestinationByTaskId(task.Id)
-                            .ToList<ServerReference.tbDestination>();
-                    foreach (ServerReference.tbDestination des in Destinations)
-                    {
-                        Backup backup = new Backup(des);
-                    }
-                    wClient.UpdateTaskLastCommit(Core.Id);
-                    wClient.UpdateTaskFinished(Core.Id, true);
+                    Backup backup = new Backup(des);
                 }
-               
             }
         }
         public static ServerReference.tbDaemon ReturnSelf()
