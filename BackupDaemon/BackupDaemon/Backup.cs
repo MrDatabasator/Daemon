@@ -79,41 +79,54 @@ namespace BackupDaemon
         }
         public void NetBackup(string Source, string Target)
         {
-            // Get the subdirectories for the specified directory.
-            DirectoryInfo dir = new DirectoryInfo(Source);
-            Console.WriteLine("Beginning new Local backup to:" + Target);
-            if (!dir.Exists)
-            {
-                throw new DirectoryNotFoundException(
-                    "Source directory does not exist or could not be found: "
-                    + Source);
-            }
+            FileAttributes attr = File.GetAttributes(Source);
 
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            // If the destination directory doesn't exist, create it.
-            if (!Directory.Exists(Target))
+            //detect whether its a directory or file
+            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
             {
-                Directory.CreateDirectory(Target);
-            }
+                // Get the subdirectories for the specified directory.
+                DirectoryInfo dir = new DirectoryInfo(Source);
+                Console.WriteLine("Beginning new Local backup to:" + Target);
+                if (!dir.Exists)
+                {
+                    throw new DirectoryNotFoundException(
+                        "Source directory does not exist or could not be found: "
+                        + Source);
+                }
 
-            // Get the files in the directory and copy them to the new location.
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
+                DirectoryInfo[] dirs = dir.GetDirectories();
+                // If the destination directory doesn't exist, create it.
+                if (!Directory.Exists(Target))
+                {
+                    Directory.CreateDirectory(Target);
+                }
+
+                // Get the files in the directory and copy them to the new location.
+                FileInfo[] files = dir.GetFiles();
+                foreach (FileInfo file in files)
+                {
+                    string temppath = Path.Combine(Target, file.Name);
+                    file.CopyTo(temppath, true);
+                }
+
+                // If copying subdirectories, copy them and their contents to new location.
+                if (true)
+                {
+                    foreach (DirectoryInfo subdir in dirs)
+                    {
+                        string temppath = Path.Combine(Target, subdir.Name);
+                        NetBackup(subdir.FullName, temppath);
+                    }
+                }
+                Console.WriteLine("Local backup done");
+            }
+            else
             {
+                FileInfo file = new FileInfo(Source);
                 string temppath = Path.Combine(Target, file.Name);
                 file.CopyTo(temppath, true);
+                
             }
-
-            // If copying subdirectories, copy them and their contents to new location.
-            if (true)
-            {
-                foreach (DirectoryInfo subdir in dirs)
-                {
-                    string temppath = Path.Combine(Target, subdir.Name);
-                    NetBackup(subdir.FullName, temppath);
-                }
-            }
-            Console.WriteLine("Local backup done");
         }
         /*
         public void NETbackupFile(string SourcePath, string TargetPath)
