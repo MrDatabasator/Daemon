@@ -57,6 +57,7 @@ namespace BackupDaemon
         public void FTPbackup(string SourceFolder, string DestinationFolder, string ServerAddress)
         {
             Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
+            Core.WriteToLog("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://"+ ServerAddress + "/"+ DestinationFolder));
 
             request.Method = WebRequestMethods.Ftp.UploadFile;
