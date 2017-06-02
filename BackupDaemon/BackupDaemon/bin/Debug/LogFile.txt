@@ -107,3 +107,28 @@
 27. 5. 2017 11:49:12:: Daemon1 >> Running on: SMUDLINCIN-POCI
 27. 5. 2017 11:52:11:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
 30.5.2017 12:33:00:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+2.6.2017 9:07:49:: Test >> Soubor C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Config.txt nebyl nalezen.
+2.6.2017 9:09:31:: Test >> Daemon started its task
+2.6.2017 9:09:31:: Test >> Running on: L108PC15
+2.6.2017 9:10:29:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:11:16:: Test >> Daemon started its task
+2.6.2017 9:11:16:: Test >> Running on: L108PC15
+2.6.2017 9:12:15:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:13:15:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:16:09:: Test >> Daemon started its task
+2.6.2017 9:16:09:: Test >> Running on: L108PC15
+2.6.2017 9:17:08:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:18:07:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:19:08:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:20:08:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:21:08:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:22:08:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:23:08:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:27:55:: Test >> Daemon started its task
+2.6.2017 9:27:55:: Test >> Running on: L108PC15
+2.6.2017 9:28:50:: Test >> Daemon started its task
+2.6.2017 9:28:50:: Test >> Running on: L108PC15
+2.6.2017 9:29:49:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:30:49:: Test >> Attempting to connect to: http://localhost:42867/Service1.svc
+2.6.2017 9:31:38:: Test >> Daemon started its task
+2.6.2017 9:31:38:: Test >> Running on: L108PC15

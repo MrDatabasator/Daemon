@@ -19,7 +19,7 @@ namespace BackupDaemon
 
         public static IScheduler Scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
-        public static int Id = 1;
+        public static int Id = 0;
 
         public static int ServerRefreshRate = 1;
 
