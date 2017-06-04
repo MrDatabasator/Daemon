@@ -55,11 +55,23 @@
   <wsdl:message name="IService1_CheckDeamonReference_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckDeamonReferenceResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_UpdateDeamonReference_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateDeamonReference" />
+  <wsdl:message name="IService1_DaemonReferenceOutdated_InputMessage">
+    <wsdl:part name="parameters" element="tns:DaemonReferenceOutdated" />
   </wsdl:message>
-  <wsdl:message name="IService1_UpdateDeamonReference_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceResponse" />
+  <wsdl:message name="IService1_DaemonReferenceOutdated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DaemonReferenceOutdatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDeamonReferenceUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceUpload" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDeamonReferenceUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDeamonReferenceGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceGet" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDeamonReferenceGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceGetResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_FindDestinationByTaskId_InputMessage">
     <wsdl:part name="parameters" element="tns:FindDestinationByTaskId" />
@@ -196,9 +208,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckDeamonReference" message="tns:IService1_CheckDeamonReference_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckDeamonReferenceResponse" message="tns:IService1_CheckDeamonReference_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateDeamonReference">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReference" message="tns:IService1_UpdateDeamonReference_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceResponse" message="tns:IService1_UpdateDeamonReference_OutputMessage" />
+    <wsdl:operation name="DaemonReferenceOutdated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DaemonReferenceOutdated" message="tns:IService1_DaemonReferenceOutdated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DaemonReferenceOutdatedResponse" message="tns:IService1_DaemonReferenceOutdated_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeamonReferenceUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceUpload" message="tns:IService1_UpdateDeamonReferenceUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceUploadResponse" message="tns:IService1_UpdateDeamonReferenceUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeamonReferenceGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceGet" message="tns:IService1_UpdateDeamonReferenceGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceGetResponse" message="tns:IService1_UpdateDeamonReferenceGet_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="FindDestinationByTaskId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/FindDestinationByTaskId" message="tns:IService1_FindDestinationByTaskId_InputMessage" />
@@ -343,8 +363,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateDeamonReference">
-      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDeamonReference" style="document" />
+    <wsdl:operation name="DaemonReferenceOutdated">
+      <soap:operation soapAction="http://tempuri.org/IService1/DaemonReferenceOutdated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeamonReferenceUpload">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDeamonReferenceUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeamonReferenceGet">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDeamonReferenceGet" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -44,7 +44,15 @@ namespace BackupDaemon
                 Core.WriteToLog("Running on: " + Environment.MachineName);
                 Console.WriteLine("Daemon started its task");
                 Console.WriteLine("Running in cycles of " + Core.ServerRefreshRate + " minutes");
-                //Core.Scheduler.Start();
+                Core.ConnectToWcfServer();
+                if (Core.wClient.CheckDeamonReference(Core.Id))
+                {
+                    Core.WriteToLog("Uploading new Daemon information");
+                    Console.WriteLine("Uploading Daemon info");
+                    Core.wClient.UpdateDeamonReferenceUpload(Core.ReturnSelf());
+                }
+                Core.wChannelFac.Close();
+                Core.Scheduler.Start();
 
 
 
@@ -62,7 +70,7 @@ namespace BackupDaemon
 
         protected override void OnStop()
         {
-            //Core.Scheduler.Shutdown();
+            Core.Scheduler.Shutdown();
             Core.WriteConfigInfo();
             Core.WriteToLog("Daemon stopped its task");
             _timer.Stop();
@@ -87,18 +95,27 @@ namespace BackupDaemon
             Core.ConnectToWcfServer();
             if(!Core.wClient.CheckDeamonReference(Core.Id))
             {
-                Console.WriteLine("Creating new self reference in database");
+                Console.WriteLine("Creating new reference of daemon in database");
                 int i = Core.wClient.UploadDaemonReference(Core.ReturnSelf());
                 Core.Id = i;
             }
-            //Core.wClient.UpdateDeamonReference(Core.Id, Core.ReturnSelf());
+            if(Core.wClient.DaemonReferenceOutdated(Core.Id, Core.ReturnSelf()))
+            {
+                Console.WriteLine("New Daemon configuration info found, downloading");
+                Core.UpdateSelf(Core.wClient.UpdateDeamonReferenceGet(Core.Id));
+            }
             Console.WriteLine("Updating Last Active");
             Core.wClient.UpdateDaemonLastActive(Core.Id);
+            Console.WriteLine("Checking for new tasks");
             if (Core.wClient.ExistDeamonTask(Core.Id))
             {
                 Console.WriteLine("Downloading tasks to resolve");
                 Core.Tasks = Core.wClient.GetDeamonTask(Core.Id).Where(x => x.TaskFinished != 1).ToList<ServerReference.tbTask>();
                 Core.ResolveTasks(Core.Tasks);
+            }
+            else
+            {
+                Console.WriteLine("No new tasks found");
             }
             Console.WriteLine("Closing Connection");
             Core.wChannelFac.Close();

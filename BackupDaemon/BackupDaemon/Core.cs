@@ -19,7 +19,7 @@ namespace BackupDaemon
 
         public static IScheduler Scheduler = StdSchedulerFactory.GetDefaultScheduler();
 
-        public static int Id = 6;
+        public static int Id = 9;
 
         public static int ServerRefreshRate = 1;
 
@@ -118,7 +118,11 @@ namespace BackupDaemon
 
             return TempDaemon;
         }
-
+        public static void UpdateSelf(ServerReference.tbDaemon Update)
+        {
+            DaemonName = Update.DaemonName;
+            ServerRefreshRate = Update.RefreshRate;
+        }
 
 
     }

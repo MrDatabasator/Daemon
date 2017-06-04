@@ -149,3 +149,19 @@
 2.6.2017 10:22:32:: TestDaemon >> Running on: L108PC14
 2.6.2017 10:23:31:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
 2.6.2017 10:24:31:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 11:59:06:: TestDaemon >> Daemon started its task
+4. 6. 2017 11:59:06:: TestDaemon >> Running on: SMUDLINCIN-POCI
+4. 6. 2017 11:59:06:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 11:59:07:: TestDaemon >> Uploading new Daemon information
+4. 6. 2017 12:00:05:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 12:01:05:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 12:02:05:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 12:04:01:: TestDaemon >> Daemon started its task
+4. 6. 2017 12:04:01:: TestDaemon >> Running on: SMUDLINCIN-POCI
+4. 6. 2017 12:04:01:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 12:05:00:: TestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 12:07:05:: ConfigTest >> Daemon started its task
+4. 6. 2017 12:07:05:: ConfigTest >> Running on: SMUDLINCIN-POCI
+4. 6. 2017 12:07:05:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+4. 6. 2017 12:07:06:: ConfigTest >> Uploading new Daemon information
+4. 6. 2017 12:09:04:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
