@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using Renci.SshNet;
 
 namespace BackupDaemon
 {
@@ -28,10 +29,54 @@ namespace BackupDaemon
                 Console.WriteLine("Wrong Type of backup");
             
         }
-
-        public void SSHbackup()
+        void UploadDirectory(SftpClient client, string localPath, string remotePath)
         {
+            Console.WriteLine("Uploading directory {0} to {1}", localPath, remotePath);
 
+            IEnumerable<FileSystemInfo> infos =
+                new DirectoryInfo(localPath).EnumerateFileSystemInfos();
+            foreach (FileSystemInfo info in infos)
+            {
+                if (info.Attributes.HasFlag(FileAttributes.Directory))
+                {
+                    string subPath = remotePath + "/" + info.Name;
+                    if (!client.Exists(subPath))
+                    {
+                        client.CreateDirectory(subPath);
+                    }
+                    UploadDirectory(client, info.FullName, remotePath + "/" + info.Name);
+                }
+                else
+                {
+                    using (Stream fileStream = new FileStream(info.FullName, FileMode.Open))
+                    {
+                        Console.WriteLine(
+                            "Uploading {0} ({1:N0} bytes)", info.FullName, ((FileInfo)info).Length);
+                        client.UploadFile(fileStream, remotePath + "/" + info.Name);
+                    }
+                }
+            }
+        }
+        public void SSHbackup(string hostname,string username, string password, string SourceFolder)
+        {
+            const int port = 22;
+
+            Console.WriteLine("Creating client and connecting");
+            Console.WriteLine("Beginning SSH backup on: "+ hostname );
+            Core.WriteToLog("Beginning SSH backup on: " + hostname );
+            using (var client = new SftpClient(hostname, port, username, password))
+            {
+                client.Connect();
+                Console.WriteLine("Connected to {0}", hostname);
+
+                using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                {
+                    Console.WriteLine("Uploading {0} ({1:N0} bytes)",
+                                        SourceFolder, fileStream.Length);
+                    client.BufferSize = 4 * 1024; // bypass Payload error large files
+                    client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+                }
+            }
         }
         void RecureDirectory(DirectoryInfo directory)
         {
