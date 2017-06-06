@@ -165,3 +165,8 @@
 4. 6. 2017 12:07:05:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
 4. 6. 2017 12:07:06:: ConfigTest >> Uploading new Daemon information
 4. 6. 2017 12:09:04:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:13:06:: ConfigTest >> Daemon started its task
+6.6.2017 12:13:06:: ConfigTest >> Running on: L107PC15
+6.6.2017 12:13:06:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:13:07:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:14:04:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
