@@ -130,5 +130,5 @@ D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupD
 D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.Daemon.resources
 D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.ProjectInstaller.resources
 D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
-X:\PROG\backupsw\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Renci.SshNet.dll
-X:\PROG\backupsw\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Renci.SshNet.xml
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Renci.SshNet.dll
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\Renci.SshNet.xml

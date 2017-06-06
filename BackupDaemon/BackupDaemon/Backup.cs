@@ -20,11 +20,16 @@ namespace BackupDaemon
             string _SourceFolder = dest.NetSourcePath;
             string _DestinationFolder = dest.NetDestinationPath;
             string _ServerAddress = dest.FtpServerAddress;
+            string _username = dest.FtpUsername;
+            string _password = dest.FtpPassword;
+            
 
             if (dest.Type.ToLower() == "local")
                 NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
             else if (dest.Type.ToLower() == "ftp")
                 FTPbackup(_SourceFolder, _DestinationFolder, _ServerAddress);
+            else if (dest.Type.ToLower() == "ssh")
+                SSHbackup(_ServerAddress,_username,_password,_SourceFolder,Convert.ToInt32(_DestinationFolder));
             else
                 Console.WriteLine("Wrong Type of backup");
             
