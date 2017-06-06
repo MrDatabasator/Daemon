@@ -110,6 +110,7 @@ namespace BackupDaemon
         public static ServerReference.tbDaemon ReturnSelf()
         {
             ServerReference.tbDaemon TempDaemon = new ServerReference.tbDaemon();
+            TempDaemon.Id = Core.Id;
             TempDaemon.DaemonName = DaemonName;
             TempDaemon.PcName = Environment.MachineName;
             TempDaemon.RefreshRate = ServerRefreshRate;

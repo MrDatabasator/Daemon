@@ -165,3 +165,32 @@
 4. 6. 2017 12:07:05:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
 4. 6. 2017 12:07:06:: ConfigTest >> Uploading new Daemon information
 4. 6. 2017 12:09:04:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:02:00:: ConfigTest >> Daemon started its task
+6.6.2017 12:02:00:: ConfigTest >> Running on: L107PC14
+6.6.2017 12:02:00:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:02:01:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:02:59:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:03:01:: ConfigTest >> Kanálu požadavku skončila platnost při čekání na odpověď po 00:00:59.9959948. Zvyšte hodnotu časového limitu předanou volání požadavku, nebo zvyšte hodnotu SendTimeout na vazbě. Čas přidělený této operaci byl pravděpodobně částí delšího časového limitu.
+6.6.2017 12:05:05:: ConfigTest >> Daemon started its task
+6.6.2017 12:05:05:: ConfigTest >> Running on: L107PC14
+6.6.2017 12:05:05:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:05:06:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:05:40:: ConfigTest >> Daemon started its task
+6.6.2017 12:05:40:: ConfigTest >> Running on: L107PC14
+6.6.2017 12:05:40:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:05:40:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:09:30:: ConfigTest >> Daemon started its task
+6.6.2017 12:09:30:: ConfigTest >> Running on: L107PC14
+6.6.2017 12:09:30:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:09:31:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:09:54:: ConfigTest >> Během příjmu odpovědi protokolu HTTP na http://localhost:42867/Service1.svc došlo k chybě. To může být proto, že vazba koncového bodu služby nepoužívá protokol HTTP. Může to být i tím, že byl kontext požadavku protokolu HTTP přerušen serverem (pravděpodobně z důvodu vypnutí služby). Další informace naleznete v protokolech serveru.
+6.6.2017 12:10:29:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:10:45:: ConfigTest >> Daemon started its task
+6.6.2017 12:10:45:: ConfigTest >> Running on: L107PC14
+6.6.2017 12:10:45:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:10:46:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:13:20:: ConfigTest >> Daemon started its task
+6.6.2017 12:13:20:: ConfigTest >> Running on: L107PC14
+6.6.2017 12:13:20:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+6.6.2017 12:13:21:: ConfigTest >> Uploading new Daemon information
+6.6.2017 12:14:19:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
