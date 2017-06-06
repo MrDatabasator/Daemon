@@ -57,9 +57,8 @@ namespace BackupDaemon
                 }
             }
         }
-        public void SSHbackup(string hostname,string username, string password, string SourceFolder)
+        public void SSHbackup(string hostname,string username, string password, string SourceFolder, int port)
         {
-            const int port = 22;
 
             Console.WriteLine("Creating client and connecting");
             Console.WriteLine("Beginning SSH backup on: "+ hostname );
