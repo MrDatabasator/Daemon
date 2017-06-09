@@ -22,65 +22,68 @@ namespace BackupDaemon
             string _ServerAddress = dest.FtpServerAddress;
             string _username = dest.FtpUsername;
             string _password = dest.FtpPassword;
-            
+            string _workingDir = dest.WorkingDirectory; 
+
 
             if (dest.Type.ToLower() == "local")
                 NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
             else if (dest.Type.ToLower() == "ftp")
                 FTPbackup(_SourceFolder, _DestinationFolder, _ServerAddress);
             else if (dest.Type.ToLower() == "ssh")
-                SSHbackup(_ServerAddress,_username,_password,_SourceFolder,Convert.ToInt32(_DestinationFolder));
+                SSHbackup(_ServerAddress, _username, _password, _SourceFolder, Convert.ToInt32(_DestinationFolder),_workingDir);
             else
                 Console.WriteLine("Wrong Type of backup");
+        }
             
-        }
-        void UploadDirectory(SftpClient client, string localPath, string remotePath)
+        public void SSHbackup(string hostname,string username, string password, string SourceFolder, int port, string workingdirectory)
         {
-            Console.WriteLine("Uploading directory {0} to {1}", localPath, remotePath);
+            FileAttributes attr = File.GetAttributes(SourceFolder);
 
-            IEnumerable<FileSystemInfo> infos =
-                new DirectoryInfo(localPath).EnumerateFileSystemInfos();
-            foreach (FileSystemInfo info in infos)
+            //detect whether its a directory or file
+            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
             {
-                if (info.Attributes.HasFlag(FileAttributes.Directory))
+                using (var client = new SftpClient(hostname, port, username, password))
                 {
-                    string subPath = remotePath + "/" + info.Name;
-                    if (!client.Exists(subPath))
+                    client.Connect();
+                    Console.WriteLine("Connected to {0}", hostname);
+
+                    client.ChangeDirectory(workingdirectory);
+                    Console.WriteLine("Changed directory to {0}", workingdirectory);
+
+                    var listDirectory = client.ListDirectory(workingdirectory);
+                    Console.WriteLine("Listing directory:");
+                    foreach (var fi in listDirectory)
                     {
-                        client.CreateDirectory(subPath);
+                        Console.WriteLine(" - " + fi.Name);
                     }
-                    UploadDirectory(client, info.FullName, remotePath + "/" + info.Name);
-                }
-                else
-                {
-                    using (Stream fileStream = new FileStream(info.FullName, FileMode.Open))
+
+                    using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
                     {
-                        Console.WriteLine(
-                            "Uploading {0} ({1:N0} bytes)", info.FullName, ((FileInfo)info).Length);
-                        client.UploadFile(fileStream, remotePath + "/" + info.Name);
+                        Console.WriteLine("Uploading {0} ({1:N0} bytes)", SourceFolder, fileStream.Length);
+                        client.BufferSize = 4 * 1024; // bypass Payload error large files 
+                        client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
                     }
                 }
             }
-        }
-        public void SSHbackup(string hostname,string username, string password, string SourceFolder, int port)
-        {
-
-            Console.WriteLine("Creating client and connecting");
-            Console.WriteLine("Beginning SSH backup on: "+ hostname );
-            Core.WriteToLog("Beginning SSH backup on: " + hostname );
-            using (var client = new SftpClient(hostname, port, username, password))
+            else
             {
-                client.Connect();
-                Console.WriteLine("Connected to {0}", hostname);
-
-                using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                Console.WriteLine("Creating client and connecting");
+                Console.WriteLine("Beginning SSH backup on: " + hostname);
+                Core.WriteToLog("Beginning SSH backup on: " + hostname);
+                using (var client = new SftpClient(hostname, port, username, password))
                 {
-                    Console.WriteLine("Uploading {0} ({1:N0} bytes)",
-                                        SourceFolder, fileStream.Length);
-                    client.BufferSize = 4 * 1024; // bypass Payload error large files
-                    client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+                    client.Connect();
+                    Console.WriteLine("Connected to {0}", hostname);
+
+                    using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                    {
+                        Console.WriteLine("Uploading {0} ({1:N0} bytes)",
+                                            SourceFolder, fileStream.Length);
+                        client.BufferSize = 4 * 1024; // bypass Payload error large files
+                        client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+                    }
                 }
-            }
+            }            
         }
         void RecureDirectory(DirectoryInfo directory)
         {

@@ -177,6 +177,9 @@ namespace BackupDaemon.ServerReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WorkingDirectoryField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -313,6 +316,19 @@ namespace BackupDaemon.ServerReference {
                 if ((object.ReferenceEquals(this.TypeField, value) != true)) {
                     this.TypeField = value;
                     this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WorkingDirectory {
+            get {
+                return this.WorkingDirectoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkingDirectoryField, value) != true)) {
+                    this.WorkingDirectoryField = value;
+                    this.RaisePropertyChanged("WorkingDirectory");
                 }
             }
         }

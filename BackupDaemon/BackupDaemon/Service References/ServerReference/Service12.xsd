@@ -24,6 +24,7 @@
       <xs:element minOccurs="0" name="NetSourcePath" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TaskId" type="xs:int" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkingDirectory" nillable="true" type="xs:string" />
     </xs:sequence>
     <xs:attribute ref="ser:Id" />
     <xs:attribute ref="ser:Ref" />
