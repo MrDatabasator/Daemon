@@ -14,17 +14,17 @@ namespace BackupDaemon
 
         private static List<ServerReference.tbTask> Tasks = new List<ServerReference.tbTask>();
 
-        static void RefreshTasks(List<ServerReference.tbTask> tasks)
+        public static void RefreshTasks(List<ServerReference.tbTask> tasks)
         {
             List<ServerReference.tbTask> NewTasks = new List<ServerReference.tbTask>();
             foreach(ServerReference.tbTask task in tasks)
             {
                 if(!Tasks.Contains(task))
-                {
-                    Tasks.Add(task);
+                {                    
                     NewTasks.Add(task);
                 }
             }
+            Tasks.AddRange(NewTasks);
             Core.ConnectToWcfServer();
             ResolveTasks(NewTasks);
             Core.wChannelFac.Close();

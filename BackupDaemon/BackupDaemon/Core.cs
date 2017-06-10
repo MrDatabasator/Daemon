@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.ServiceModel;
-
+using System.Net;
+using System.Net.Sockets;
 
 namespace BackupDaemon
 {
@@ -99,13 +100,13 @@ namespace BackupDaemon
             {
                 Destinations = wClient.FindDestinationByTaskId(task.Id)
                         .ToList<ServerReference.tbDestination>();
-                wClient.UpdateTaskLastCommit(Core.Id);
-                wClient.UpdateTaskFinished(Core.Id, true);
+                wClient.UpdateTaskLastCommit(Core.Id);                
                 foreach (ServerReference.tbDestination des in Destinations)
                 {
                     Backup backup = new Backup(des);
                 }
             }
+            //JobSolver.RefreshTasks(tasks);
         }
         public static ServerReference.tbDaemon ReturnSelf()
         {
@@ -114,8 +115,15 @@ namespace BackupDaemon
             TempDaemon.DaemonName = DaemonName;
             TempDaemon.PcName = Environment.MachineName;
             TempDaemon.RefreshRate = ServerRefreshRate;
-            TempDaemon.LastActive = DateTime.Now;
-            TempDaemon.IpAddress = "127.0.0.1";
+            TempDaemon.LastActive = DateTime.Now;            
+
+            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+
+            string ipAddress = host
+                .AddressList
+                .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
+
+            TempDaemon.IpAddress = ipAddress;
 
             return TempDaemon;
         }

@@ -53,12 +53,6 @@ namespace BackupDaemon
                 }
                 Core.wChannelFac.Close();
                 Core.Scheduler.Start();
-
-
-
-                /*Core.ConnectToWcfServer();
-                Core.wClient.UploadString("Patrik neumi programovat");
-                Core.wChannelFac.Close();*/
             }
             catch(Exception ex)
             {
@@ -70,10 +64,10 @@ namespace BackupDaemon
 
         protected override void OnStop()
         {
+            _timer.Stop();
             Core.Scheduler.Shutdown();
             Core.WriteConfigInfo();
-            Core.WriteToLog("Daemon stopped its task");
-            _timer.Stop();
+            Core.WriteToLog("Daemon stopped its task");            
         }
         private void _timer_Tick(object sender, EventArgs e)
         {
