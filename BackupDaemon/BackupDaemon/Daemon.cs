@@ -41,7 +41,7 @@ namespace BackupDaemon
             {
                 Core.GetConfigInfo();
                 Core.WriteToLog("Daemon started its task");
-                Core.WriteToLog("Running on: " + Environment.MachineName);
+                Core.WriteToLog("Running on: " + Environment.MachineName + ", IP: " + Core.GetLocalIp());
                 Console.WriteLine("Daemon started its task");
                 Console.WriteLine("Running in cycles of " + Core.ServerRefreshRate + " minutes");
                 Core.ConnectToWcfServer();

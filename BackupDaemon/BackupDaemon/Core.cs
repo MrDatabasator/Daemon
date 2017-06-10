@@ -115,15 +115,8 @@ namespace BackupDaemon
             TempDaemon.DaemonName = DaemonName;
             TempDaemon.PcName = Environment.MachineName;
             TempDaemon.RefreshRate = ServerRefreshRate;
-            TempDaemon.LastActive = DateTime.Now;            
-
-            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-
-            string ipAddress = host
-                .AddressList
-                .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
-
-            TempDaemon.IpAddress = ipAddress;
+            TempDaemon.LastActive = DateTime.Now;
+            TempDaemon.IpAddress = GetLocalIp();
 
             return TempDaemon;
         }
@@ -132,7 +125,14 @@ namespace BackupDaemon
             DaemonName = Update.DaemonName;
             ServerRefreshRate = Update.RefreshRate;
         }
+        public static string GetLocalIp()
+        {
+            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
 
+            return host
+                .AddressList
+                .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();            
+        }
 
     }
 }
