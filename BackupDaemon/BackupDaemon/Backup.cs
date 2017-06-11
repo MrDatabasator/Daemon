@@ -37,53 +37,61 @@ namespace BackupDaemon
             
         public void SSHbackup(string hostname,string username, string password, string SourceFolder, int port, string workingdirectory)
         {
-            FileAttributes attr = File.GetAttributes(SourceFolder);
-
-            //detect whether its a directory or file
-            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+            try
             {
-                using (var client = new SftpClient(hostname, port, username, password))
+                FileAttributes attr = File.GetAttributes(SourceFolder);
+
+                //detect whether its a directory or file
+                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
                 {
-                    client.Connect();
-                    Console.WriteLine("Connected to {0}", hostname);
-
-                    client.ChangeDirectory(workingdirectory);
-                    Console.WriteLine("Changed directory to {0}", workingdirectory);
-
-                    var listDirectory = client.ListDirectory(workingdirectory);
-                    Console.WriteLine("Listing directory:");
-                    foreach (var fi in listDirectory)
+                    using (var client = new SftpClient(hostname, port, username, password))
                     {
-                        Console.WriteLine(" - " + fi.Name);
+                        client.Connect();
+                        Console.WriteLine("Connected to {0}", hostname);
+
+                        client.ChangeDirectory(workingdirectory);
+                        Console.WriteLine("Changed directory to {0}", workingdirectory);
+
+                        var listDirectory = client.ListDirectory(workingdirectory);
+                        Console.WriteLine("Listing directory:");
+                        foreach (var fi in listDirectory)
+                        {
+                            Console.WriteLine(" - " + fi.Name);
+                        }
+
+                        using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                        {
+                            Console.WriteLine("Uploading {0} ({1:N0} bytes)", SourceFolder, fileStream.Length);
+                            client.BufferSize = 4 * 1024; // bypass Payload error large files 
+                            client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+                        }
                     }
-
-                    using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                }
+                else
+                {
+                    Console.WriteLine("Creating client and connecting");
+                    Console.WriteLine("Beginning SSH backup on: " + hostname);
+                    Core.WriteToLog("Beginning SSH backup on: " + hostname);
+                    using (var client = new SftpClient(hostname, port, username, password))
                     {
-                        Console.WriteLine("Uploading {0} ({1:N0} bytes)", SourceFolder, fileStream.Length);
-                        client.BufferSize = 4 * 1024; // bypass Payload error large files 
-                        client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+                        client.Connect();
+                        Console.WriteLine("Connected to {0}", hostname);
+
+                        using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                        {
+                            Console.WriteLine("Uploading {0} ({1:N0} bytes)",
+                                                SourceFolder, fileStream.Length);
+                            client.BufferSize = 4 * 1024; // bypass Payload error large files
+                            client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+                        }
                     }
                 }
             }
-            else
+            catch (Exception)
             {
-                Console.WriteLine("Creating client and connecting");
-                Console.WriteLine("Beginning SSH backup on: " + hostname);
-                Core.WriteToLog("Beginning SSH backup on: " + hostname);
-                using (var client = new SftpClient(hostname, port, username, password))
-                {
-                    client.Connect();
-                    Console.WriteLine("Connected to {0}", hostname);
-
-                    using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
-                    {
-                        Console.WriteLine("Uploading {0} ({1:N0} bytes)",
-                                            SourceFolder, fileStream.Length);
-                        client.BufferSize = 4 * 1024; // bypass Payload error large files
-                        client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
-                    }
-                }
-            }            
+                Console.WriteLine("SSH backup failed, please check input parameters");                
+            }
+                       
         }
         void RecureDirectory(DirectoryInfo directory)
         {
@@ -108,87 +116,104 @@ namespace BackupDaemon
         }
         public void FTPbackup(string SourceFolder, string DestinationFolder, string ServerAddress)
         {
-            Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
-            Core.WriteToLog("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://"+ ServerAddress + "/"+ DestinationFolder));
+            try
+            {
+                Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
+                Core.WriteToLog("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://" + ServerAddress + "/" + DestinationFolder));
 
-            request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential(tbDestination.FtpUsername, tbDestination.FtpPassword);
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+                request.Credentials = new NetworkCredential(tbDestination.FtpUsername, tbDestination.FtpPassword);
 
-            StreamReader sourceStream = new StreamReader(SourceFolder);
-            byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
-            sourceStream.Close();
-            request.ContentLength = fileContents.Length;
+                StreamReader sourceStream = new StreamReader(SourceFolder);
+                byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
+                sourceStream.Close();
+                request.ContentLength = fileContents.Length;
 
-            Stream requestStream = request.GetRequestStream();
-            requestStream.Write(fileContents, 0, fileContents.Length);
-            requestStream.Close();
+                Stream requestStream = request.GetRequestStream();
+                requestStream.Write(fileContents, 0, fileContents.Length);
+                requestStream.Close();
 
-            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
-            Console.WriteLine("Upload File Complete, status {0}", response.StatusDescription);
+                Console.WriteLine("Upload File Complete, status {0}", response.StatusDescription);
 
-            response.Close();
+                response.Close();
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("FTP backup failed, please check input parameters");
+            }
+           
         }
         public void NetBackup(string Source, string Target)
         {
-            FileAttributes attr = File.GetAttributes(Source);
-
-            //detect whether its a directory or file
-            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+            try
             {
-                // Get the subdirectories for the specified directory.
-                DirectoryInfo dir = new DirectoryInfo(Source);
-                Console.WriteLine("Beginning new Local backup to:" + Target);
-                Core.WriteToLog("Beginning new Local backup to: " + Target);
-                if (!dir.Exists)
-                {
-                    throw new DirectoryNotFoundException(
-                        "Source directory does not exist or could not be found: "
-                        + Source);
-                }
+                FileAttributes attr = File.GetAttributes(Source);
 
-                DirectoryInfo[] dirs = dir.GetDirectories();
-                // If the destination directory doesn't exist, create it.
-                if (!Directory.Exists(Target))
+                //detect whether its a directory or file
+                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
                 {
-                    Directory.CreateDirectory(Target);
-                }
+                    // Get the subdirectories for the specified directory.
+                    DirectoryInfo dir = new DirectoryInfo(Source);
+                    Console.WriteLine("Beginning new Local backup to:" + Target);
+                    Core.WriteToLog("Beginning new Local backup to: " + Target);
+                    if (!dir.Exists)
+                    {
+                        throw new DirectoryNotFoundException(
+                            "Source directory does not exist or could not be found: "
+                            + Source);
+                    }
 
-                // Get the files in the directory and copy them to the new location.
-                FileInfo[] files = dir.GetFiles();
-                foreach (FileInfo file in files)
+                    DirectoryInfo[] dirs = dir.GetDirectories();
+                    // If the destination directory doesn't exist, create it.
+                    if (!Directory.Exists(Target))
+                    {
+                        Directory.CreateDirectory(Target);
+                    }
+
+                    // Get the files in the directory and copy them to the new location.
+                    FileInfo[] files = dir.GetFiles();
+                    foreach (FileInfo file in files)
+                    {
+                        string temppath = Path.Combine(Target, file.Name);
+                        file.CopyTo(temppath, true);
+                    }
+
+                    // If copying subdirectories, copy them and their contents to new location.
+                    if (true)
+                    {
+                        foreach (DirectoryInfo subdir in dirs)
+                        {
+                            string temppath = Path.Combine(Target, subdir.Name);
+                            NetBackup(subdir.FullName, temppath);
+                        }
+                    }
+                    Console.WriteLine("Local backup done");
+                }
+                else
                 {
+                    FileInfo file = new FileInfo(Source);
+                    if (!file.Exists)
+                    {
+                        throw new FileNotFoundException(
+                            "Source file does not exist or could not be found: "
+                            + Source);
+                    }
+                    Core.WriteToLog("Beginning new Local backup to: " + Target);
+                    Console.WriteLine("Beginning new Local backup to:" + Target);
                     string temppath = Path.Combine(Target, file.Name);
                     file.CopyTo(temppath, true);
-                }
 
-                // If copying subdirectories, copy them and their contents to new location.
-                if (true)
-                {
-                    foreach (DirectoryInfo subdir in dirs)
-                    {
-                        string temppath = Path.Combine(Target, subdir.Name);
-                        NetBackup(subdir.FullName, temppath);
-                    }
                 }
-                Console.WriteLine("Local backup done");
             }
-            else
+            catch (Exception)
             {
-                FileInfo file = new FileInfo(Source);
-                if (!file.Exists)
-                {
-                    throw new FileNotFoundException(
-                        "Source file does not exist or could not be found: "
-                        + Source);
-                }
-                Core.WriteToLog("Beginning new Local backup to: " + Target);
-                Console.WriteLine("Beginning new Local backup to:" + Target);
-                string temppath = Path.Combine(Target, file.Name);
-                file.CopyTo(temppath, true);
-                
+                Console.WriteLine("NET backup failed, please check input parameters");
             }
+            
         }
         /*
         public void NETbackupFile(string SourcePath, string TargetPath)

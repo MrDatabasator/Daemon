@@ -199,3 +199,26 @@
 9.6.2017 9:41:02:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
 9.6.2017 9:41:02:: ConfigTest >> Beginning SSH backup on: shell.xshellz.com
 9.6.2017 9:42:02:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 21:38:31:: ConfigTest >> Daemon started its task
+11.06.2017 21:38:31:: ConfigTest >> Running on: BLOODYTRACK, IP: 192.168.1.13
+11.06.2017 21:38:31:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 21:38:59:: ConfigTest >> Daemon started its task
+11.06.2017 21:38:59:: ConfigTest >> Running on: BLOODYTRACK, IP: 192.168.1.13
+11.06.2017 21:38:59:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 21:42:20:: ConfigTest >> Daemon started its task
+11.06.2017 21:42:20:: ConfigTest >> Running on: BLOODYTRACK, IP: 192.168.50.141
+11.06.2017 21:42:20:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 21:42:20:: ConfigTest >> Uploading new Daemon information
+11.06.2017 21:43:19:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 21:59:58:: ConfigTest >> Daemon started its task
+11.06.2017 21:59:58:: ConfigTest >> Running on: BLOODYTRACK, IP: 192.168.50.141
+11.06.2017 21:59:58:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 21:59:59:: ConfigTest >> Uploading new Daemon information
+11.06.2017 22:03:46:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 22:03:46:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 22:03:46:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 22:20:36:: ConfigTest >> Daemon started its task
+11.06.2017 22:20:36:: ConfigTest >> Running on: BLOODYTRACK, IP: 192.168.50.141
+11.06.2017 22:20:36:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
+11.06.2017 22:20:36:: ConfigTest >> Uploading new Daemon information
+11.06.2017 22:21:34:: ConfigTest >> Attempting to connect to: http://localhost:42867/Service1.svc
