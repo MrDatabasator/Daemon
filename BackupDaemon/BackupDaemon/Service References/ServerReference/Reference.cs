@@ -780,6 +780,12 @@ namespace BackupDaemon.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
         System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupDaemon.ServerReference.tbTask t);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemonById", ReplyAction="http://tempuri.org/IService1/GetDaemonByIdResponse")]
+        BackupDaemon.ServerReference.tbDaemon GetDaemonById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemonById", ReplyAction="http://tempuri.org/IService1/GetDaemonByIdResponse")]
+        System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDaemon> GetDaemonByIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteTask", ReplyAction="http://tempuri.org/IService1/DeleteTaskResponse")]
         void DeleteTask(BackupDaemon.ServerReference.tbTask t);
         
@@ -1026,6 +1032,14 @@ namespace BackupDaemon.ServerReference {
         
         public System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupDaemon.ServerReference.tbTask t) {
             return base.Channel.UploadTaskReferenceAsync(t);
+        }
+        
+        public BackupDaemon.ServerReference.tbDaemon GetDaemonById(int id) {
+            return base.Channel.GetDaemonById(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDaemon> GetDaemonByIdAsync(int id) {
+            return base.Channel.GetDaemonByIdAsync(id);
         }
         
         public void DeleteTask(BackupDaemon.ServerReference.tbTask t) {
