@@ -502,6 +502,9 @@ namespace BackupDaemon.ServerReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -547,6 +550,19 @@ namespace BackupDaemon.ServerReference {
                 if ((object.ReferenceEquals(this.MessageField, value) != true)) {
                     this.MessageField = value;
                     this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
                 }
             }
         }
@@ -751,6 +767,12 @@ namespace BackupDaemon.ServerReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
         System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDaemon[]> GetAllDaemonsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllStatsLogs", ReplyAction="http://tempuri.org/IService1/GetAllStatsLogsResponse")]
+        BackupDaemon.ServerReference.tbLog[] GetAllStatsLogs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllStatsLogs", ReplyAction="http://tempuri.org/IService1/GetAllStatsLogsResponse")]
+        System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbLog[]> GetAllStatsLogsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
         int UploadTaskReference(BackupDaemon.ServerReference.tbTask t);
@@ -988,6 +1010,14 @@ namespace BackupDaemon.ServerReference {
         
         public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbDaemon[]> GetAllDaemonsAsync() {
             return base.Channel.GetAllDaemonsAsync();
+        }
+        
+        public BackupDaemon.ServerReference.tbLog[] GetAllStatsLogs() {
+            return base.Channel.GetAllStatsLogs();
+        }
+        
+        public System.Threading.Tasks.Task<BackupDaemon.ServerReference.tbLog[]> GetAllStatsLogsAsync() {
+            return base.Channel.GetAllStatsLogsAsync();
         }
         
         public int UploadTaskReference(BackupDaemon.ServerReference.tbTask t) {

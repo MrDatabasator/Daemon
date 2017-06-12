@@ -61,6 +61,7 @@
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="tbLog" nillable="true" type="tns:tbLog" />
@@ -70,6 +71,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOftbDaemon" nillable="true" type="tns:ArrayOftbDaemon" />
+  <xs:complexType name="ArrayOftbLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbLog" nillable="true" type="tns:tbLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbLog" nillable="true" type="tns:ArrayOftbLog" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />

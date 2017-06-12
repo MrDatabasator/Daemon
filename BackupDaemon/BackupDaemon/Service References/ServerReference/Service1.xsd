@@ -273,10 +273,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllStatsLogs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllStatsLogsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllStatsLogsResult" nillable="true" type="q15:ArrayOftbLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="UploadTaskReference">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q15:tbTask" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q16:tbTask" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -290,7 +302,7 @@
   <xs:element name="DeleteTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q16:tbTask" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q17:tbTask" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -302,7 +314,7 @@
   <xs:element name="DeleteDestination">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="d" nillable="true" type="q17:tbDestination" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="d" nillable="true" type="q18:tbDestination" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -314,7 +326,7 @@
   <xs:element name="AutoDeleteTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q18:tbTask" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="t" nillable="true" type="q19:tbTask" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -326,14 +338,14 @@
   <xs:element name="GetDaemon">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="o" nillable="true" type="q19:tbDaemon" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="o" nillable="true" type="q20:tbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDaemonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDaemonResult" nillable="true" type="q20:tbDaemon" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDaemonResult" nillable="true" type="q21:tbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -354,14 +366,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q21:CompositeType" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q22:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q22:CompositeType" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q23:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
