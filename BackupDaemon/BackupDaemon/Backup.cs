@@ -187,7 +187,7 @@ namespace BackupDaemon
                         foreach (DirectoryInfo subdir in dirs)
                         {
                             string temppath = Path.Combine(Target, subdir.Name);
-                            NetBackup(subdir.FullName, temppath);
+                            NetBackup(subdir.FullName, temppath,ClientMail);
                         }
                     }
                     Console.WriteLine("Local backup done");
