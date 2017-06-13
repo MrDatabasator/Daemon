@@ -13,15 +13,20 @@ namespace BackupDaemon
         //private List<ServerReference.tbTask> Tasks { get; set; }
 
         private static List<ServerReference.tbTask> Tasks = new List<ServerReference.tbTask>();
+        private static List<int> TaskIds = new List<int>();
+
+
 
         public static void RefreshTasks(List<ServerReference.tbTask> tasks)
         {
+            
             List<ServerReference.tbTask> NewTasks = new List<ServerReference.tbTask>();
             foreach(ServerReference.tbTask task in tasks)
             {
-                if(!Tasks.Contains(task))
+                if(!TaskIds.Contains(task.Id))
                 {                    
                     NewTasks.Add(task);
+                    TaskIds.Add(task.Id);
                 }
             }
             Tasks.AddRange(NewTasks);

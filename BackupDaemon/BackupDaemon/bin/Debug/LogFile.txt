@@ -12,3 +12,35 @@
 12. 6. 2017 16:47:57:: Daemon1 >> Running on: SMUDLINCIN-POCI, IP: 192.168.50.85
 12. 6. 2017 16:47:57:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
 12. 6. 2017 16:47:58:: Daemon1 >> Uploading new Daemon information
+13.6.2017 12:12:29:: Daemon1 >> Daemon started its task
+13.6.2017 12:12:29:: Daemon1 >> Running on: L107PC14, IP: 192.168.104.14
+13.6.2017 12:12:30:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:12:30:: Daemon1 >> Uploading new Daemon information
+13.6.2017 12:13:28:: Daemon1 >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:14:13:: ZipTestDaemon >> Daemon started its task
+13.6.2017 12:14:14:: ZipTestDaemon >> Running on: L107PC14, IP: 192.168.104.14
+13.6.2017 12:14:14:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:15:12:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:16:12:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:17:12:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:18:12:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:19:12:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:19:12:: ZipTestDaemon >> Beginning SSH backup on: shell.xshellz.com
+13.6.2017 12:26:21:: ZipTestDaemon >> Daemon started its task
+13.6.2017 12:26:21:: ZipTestDaemon >> Running on: L107PC14, IP: 192.168.104.14
+13.6.2017 12:26:21:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:26:21:: ZipTestDaemon >> Uploading new Daemon information
+13.6.2017 12:27:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:27:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:28:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:28:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:32:18:: ZipTestDaemon >> Daemon started its task
+13.6.2017 12:32:18:: ZipTestDaemon >> Running on: L107PC14, IP: 192.168.104.14
+13.6.2017 12:32:18:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:32:19:: ZipTestDaemon >> Uploading new Daemon information
+13.6.2017 12:33:17:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:33:17:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:34:00:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.6.2017 12:34:00:: ZipTestDaemon >> Initiating new  Local
+13.6.2017 12:34:00:: ZipTestDaemon >> Beginning new Local backup to: C:/users/jajkosimon/Desktop/ziptarget
+13.6.2017 12:34:00:: ZipTestDaemon >> Beginning new Local backup to: C:/users/jajkosimon/Desktop/ziptarget\fdfsd

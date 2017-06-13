@@ -23,8 +23,8 @@ namespace BackupDaemon
             string _ServerAddress = dest.FtpServerAddress;
             string _username = dest.FtpUsername;
             string _password = dest.FtpPassword;
-            string _workingDir = dest.WorkingDirectory; 
-
+            string _workingDir = dest.WorkingDirectory;
+       
 
             if (dest.Type.ToLower() == "local")
                 NetBackup(dest.NetSourcePath, dest.NetDestinationPath);

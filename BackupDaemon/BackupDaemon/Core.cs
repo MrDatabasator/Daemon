@@ -24,7 +24,7 @@ namespace BackupDaemon
 
         public static int ServerRefreshRate = 1;
 
-        public static string DaemonName = "TestDaemon";
+        public static string DaemonName = "ZipBKTestDaemon";
 
         public static string wStringAddress = "http://localhost:42867/Service1.svc";
 
@@ -96,7 +96,7 @@ namespace BackupDaemon
         }
         public static void ResolveTasks(List<ServerReference.tbTask> tasks)
         {
-            foreach (ServerReference.tbTask task in tasks)
+            /*foreach (ServerReference.tbTask task in tasks)
             {
                 Destinations = wClient.FindDestinationByTaskId(task.Id)
                         .ToList<ServerReference.tbDestination>();
@@ -105,8 +105,8 @@ namespace BackupDaemon
                 {
                     Backup backup = new Backup(des);
                 }
-            }
-            //JobSolver.RefreshTasks(tasks);
+            }*/
+            JobSolver.RefreshTasks(tasks);
         }
         public static ServerReference.tbDaemon ReturnSelf()
         {
