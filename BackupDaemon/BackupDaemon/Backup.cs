@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using Renci.SshNet;
 using System.IO.Compression;
+using System.Net.Mail;
 
 namespace BackupDaemon
 {
@@ -24,19 +25,20 @@ namespace BackupDaemon
             string _username = dest.FtpUsername;
             string _password = dest.FtpPassword;
             string _workingDir = dest.WorkingDirectory;
-       
+            string _clientMail = dest.ClientMail;
+
 
             if (dest.Type.ToLower() == "local")
-                NetBackup(dest.NetSourcePath, dest.NetDestinationPath);
+                NetBackup(dest.NetSourcePath, dest.NetDestinationPath,_clientMail);
             else if (dest.Type.ToLower() == "ftp")
-                FTPbackup(_SourceFolder, _DestinationFolder, _ServerAddress);
+                FTPbackup(_SourceFolder, _DestinationFolder, _ServerAddress, _clientMail);
             else if (dest.Type.ToLower() == "ssh")
-                SSHbackup(_ServerAddress, _username, _password, _SourceFolder, Convert.ToInt32(_DestinationFolder),_workingDir);
+                SSHbackup(_ServerAddress, _username, _password, _SourceFolder, Convert.ToInt32(_DestinationFolder),_workingDir, _clientMail);
             else
                 Console.WriteLine("Wrong Type of backup");
         }
             
-        public void SSHbackup(string hostname,string username, string password, string SourceFolder, int port, string workingdirectory)
+        public void SSHbackup(string hostname,string username, string password, string SourceFolder, int port, string workingdirectory, string ClientMail)
         {
             try
             {
@@ -58,14 +60,32 @@ namespace BackupDaemon
                                             SourceFolder, fileStream.Length);
                         client.BufferSize = 4 * 1024; // bypass Payload error large files
                         client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
+
                     }
-                }               
+                }
+                sendmail(workingdirectory, SourceFolder, ClientMail);
             }
             catch (Exception)
             {
                 Console.WriteLine("SSH backup failed, please check input parameters");                
             }
                        
+        }
+        public void sendmail(string destdir, string sourcedirr, string ClientMail)
+        {
+            MailMessage objeto_mail = new MailMessage();
+            SmtpClient client = new SmtpClient();
+            client.Port = 587;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+            client.Timeout = 10000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential("yourfavouritebackupsoftware@gmail.com", "nedamheslo");
+            objeto_mail.From = new MailAddress("yourfavouritebackupsoftware@gmail.com");
+            objeto_mail.To.Add(new MailAddress(ClientMail));
+            objeto_mail.Body = " Backup succesfully done from" + sourcedirr + " to " + destdir;
+            client.Send(objeto_mail);
         }
         void RecureDirectory(DirectoryInfo directory)
         {
@@ -88,7 +108,7 @@ namespace BackupDaemon
                 }
             }
         }
-        public void FTPbackup(string SourceFolder, string DestinationFolder, string ServerAddress)
+        public void FTPbackup(string SourceFolder, string DestinationFolder, string ServerAddress,string ClientMail)
         {
             try
             {
@@ -115,8 +135,9 @@ namespace BackupDaemon
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
                 Console.WriteLine("Upload File Complete, status {0}", response.StatusDescription);
-
+                sendmail(DestinationFolder, SourceFolder, ClientMail);
                 response.Close();
+
             }
             catch (Exception)
             {
@@ -125,7 +146,7 @@ namespace BackupDaemon
             }
            
         }
-        public void NetBackup(string Source, string Target)
+        public void NetBackup(string Source, string Target, string ClientMail)
         {
             try
             {
@@ -166,10 +187,11 @@ namespace BackupDaemon
                         foreach (DirectoryInfo subdir in dirs)
                         {
                             string temppath = Path.Combine(Target, subdir.Name);
-                            NetBackup(subdir.FullName, temppath);
+                            NetBackup(subdir.FullName, temppath,ClientMail);
                         }
                     }
                     Console.WriteLine("Local backup done");
+                    sendmail(Target, Source, ClientMail);
                 }
                 else
                 {
@@ -184,6 +206,7 @@ namespace BackupDaemon
                     Console.WriteLine("Beginning new Local backup to:" + Target);
                     string temppath = Path.Combine(Target, file.Name);
                     file.CopyTo(temppath, true);
+                    sendmail(Target, Source, ClientMail);
 
                 }
             }
