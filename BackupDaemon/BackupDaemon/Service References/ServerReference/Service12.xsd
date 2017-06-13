@@ -14,6 +14,7 @@
   <xs:element name="tbDaemon" nillable="true" type="tns:tbDaemon" />
   <xs:complexType name="tbDestination">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ClientMail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FtpPassword" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FtpServerAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FtpUsername" nillable="true" type="xs:string" />

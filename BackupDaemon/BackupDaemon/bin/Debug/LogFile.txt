@@ -44,3 +44,47 @@
 13.6.2017 12:34:00:: ZipTestDaemon >> Initiating new  Local
 13.6.2017 12:34:00:: ZipTestDaemon >> Beginning new Local backup to: C:/users/jajkosimon/Desktop/ziptarget
 13.6.2017 12:34:00:: ZipTestDaemon >> Beginning new Local backup to: C:/users/jajkosimon/Desktop/ziptarget\fdfsd
+13.06.2017 16:43:13:: ZipTestDaemon >> Daemon started its task
+13.06.2017 16:43:13:: ZipTestDaemon >> Running on: BLOODYTRACK, IP: 192.168.50.141
+13.06.2017 16:43:13:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:43:14:: ZipTestDaemon >> Uploading new Daemon information
+13.06.2017 16:43:58:: ZipTestDaemon >> Daemon started its task
+13.06.2017 16:43:58:: ZipTestDaemon >> Running on: BLOODYTRACK, IP: 192.168.50.141
+13.06.2017 16:43:58:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:43:59:: ZipTestDaemon >> Uploading new Daemon information
+13.06.2017 16:44:57:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:44:57:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:45:27:: ZipTestDaemon >> Daemon started its task
+13.06.2017 16:45:27:: ZipTestDaemon >> Running on: BLOODYTRACK, IP: 192.168.50.141
+13.06.2017 16:45:27:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:45:27:: ZipTestDaemon >> Uploading new Daemon information
+13.06.2017 16:46:26:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:47:26:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:49:21:: ZipTestDaemon >> Daemon started its task
+13.06.2017 16:49:21:: ZipTestDaemon >> Running on: BLOODYTRACK, IP: 192.168.50.141
+13.06.2017 16:49:21:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:49:21:: ZipTestDaemon >> Uploading new Daemon information
+13.06.2017 16:50:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:51:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:51:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:52:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:52:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:52:37:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:52:37:: ZipTestDaemon >> Initiating new  SSH
+13.06.2017 16:52:37:: ZipTestDaemon >> Beginning SSH backup on: shell.xshellz.com
+13.06.2017 16:53:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:53:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:54:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:54:20:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:58:29:: ZipTestDaemon >> Daemon started its task
+13.06.2017 16:58:29:: ZipTestDaemon >> Running on: BLOODYTRACK, IP: 192.168.50.141
+13.06.2017 16:58:29:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 16:58:30:: ZipTestDaemon >> Uploading new Daemon information
+13.06.2017 16:59:28:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:00:28:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:01:28:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:01:28:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:02:28:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:02:28:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:02:37:: ZipTestDaemon >> Attempting to connect to: http://localhost:42867/Service1.svc
+13.06.2017 17:02:37:: ZipTestDaemon >> Initiating new  SSH

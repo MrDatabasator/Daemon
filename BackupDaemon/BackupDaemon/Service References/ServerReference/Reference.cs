@@ -148,6 +148,9 @@ namespace BackupDaemon.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClientMailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FtpPasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -187,6 +190,19 @@ namespace BackupDaemon.ServerReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ClientMail {
+            get {
+                return this.ClientMailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientMailField, value) != true)) {
+                    this.ClientMailField = value;
+                    this.RaisePropertyChanged("ClientMail");
+                }
             }
         }
         

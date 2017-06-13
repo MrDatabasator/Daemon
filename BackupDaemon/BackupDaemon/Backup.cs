@@ -84,7 +84,8 @@ namespace BackupDaemon
             client.Credentials = new NetworkCredential("yourfavouritebackupsoftware@gmail.com", "nedamheslo");
             objeto_mail.From = new MailAddress("yourfavouritebackupsoftware@gmail.com");
             objeto_mail.To.Add(new MailAddress(ClientMail));
-            objeto_mail.Body = " Backup succesfully done from" + sourcedirr + " to " + destdir;
+            objeto_mail.Body = " Backup successfully done from " + sourcedirr + " to " + destdir;
+            Console.WriteLine("Backup successfully done from " + sourcedirr + " to " + destdir);
             client.Send(objeto_mail);
         }
         void RecureDirectory(DirectoryInfo directory)
