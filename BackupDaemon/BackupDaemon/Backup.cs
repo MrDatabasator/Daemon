@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using Renci.SshNet;
+using System.IO.Compression;
 
 namespace BackupDaemon
 {
@@ -39,53 +40,26 @@ namespace BackupDaemon
         {
             try
             {
-                FileAttributes attr = File.GetAttributes(SourceFolder);
+                ZipFile.CreateFromDirectory(SourceFolder, SourceFolder + ".zip");
+                SourceFolder = SourceFolder + ".zip";
+                FileInfo fileInf = new FileInfo(SourceFolder);
 
-                //detect whether its a directory or file
-                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
-                {
-                    using (var client = new SftpClient(hostname, port, username, password))
-                    {
-                        client.Connect();
-                        Console.WriteLine("Connected to {0}", hostname);
-
-                        client.ChangeDirectory(workingdirectory);
-                        Console.WriteLine("Changed directory to {0}", workingdirectory);
-
-                        var listDirectory = client.ListDirectory(workingdirectory);
-                        Console.WriteLine("Listing directory:");
-                        foreach (var fi in listDirectory)
-                        {
-                            Console.WriteLine(" - " + fi.Name);
-                        }
-
-                        using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
-                        {
-                            Console.WriteLine("Uploading {0} ({1:N0} bytes)", SourceFolder, fileStream.Length);
-                            client.BufferSize = 4 * 1024; // bypass Payload error large files 
-                            client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
-                        }
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Creating client and connecting");
+                Console.WriteLine("Creating client and connecting");
                     Console.WriteLine("Beginning SSH backup on: " + hostname);
                     Core.WriteToLog("Beginning SSH backup on: " + hostname);
-                    using (var client = new SftpClient(hostname, port, username, password))
-                    {
-                        client.Connect();
-                        Console.WriteLine("Connected to {0}", hostname);
+                using (var client = new SftpClient(hostname, port, username, password))
+                {
+                    client.Connect();
+                    Console.WriteLine("Connected to {0}", hostname);
 
-                        using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
-                        {
-                            Console.WriteLine("Uploading {0} ({1:N0} bytes)",
-                                                SourceFolder, fileStream.Length);
-                            client.BufferSize = 4 * 1024; // bypass Payload error large files
-                            client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
-                        }
+                    using (var fileStream = new FileStream(SourceFolder, FileMode.Open))
+                    {
+                        Console.WriteLine("Uploading {0} ({1:N0} bytes)",
+                                            SourceFolder, fileStream.Length);
+                        client.BufferSize = 4 * 1024; // bypass Payload error large files
+                        client.UploadFile(fileStream, Path.GetFileName(SourceFolder));
                     }
-                }
+                }               
             }
             catch (Exception)
             {
@@ -118,6 +92,10 @@ namespace BackupDaemon
         {
             try
             {
+                ZipFile.CreateFromDirectory(SourceFolder, SourceFolder + ".zip");
+                SourceFolder = SourceFolder + ".zip";
+                FileInfo fileInf = new FileInfo(SourceFolder);
+
                 Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
                 Core.WriteToLog("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri("ftp://" + ServerAddress + "/" + DestinationFolder));

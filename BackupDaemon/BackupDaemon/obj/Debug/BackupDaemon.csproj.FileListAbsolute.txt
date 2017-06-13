@@ -20,3 +20,6 @@ D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupD
 D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.csproj.GenerateResource.Cache
 D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
 D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
