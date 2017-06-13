@@ -42,7 +42,7 @@ namespace BackupDaemon
             {
                 ZipFile.CreateFromDirectory(SourceFolder, SourceFolder + ".zip");
                 SourceFolder = SourceFolder + ".zip";
-                FileInfo fileInf = new FileInfo(SourceFolder);
+                //FileInfo fileInf = new FileInfo(SourceFolder);
 
                 Console.WriteLine("Creating client and connecting");
                     Console.WriteLine("Beginning SSH backup on: " + hostname);
@@ -94,7 +94,7 @@ namespace BackupDaemon
             {
                 ZipFile.CreateFromDirectory(SourceFolder, SourceFolder + ".zip");
                 SourceFolder = SourceFolder + ".zip";
-                FileInfo fileInf = new FileInfo(SourceFolder);
+                //FileInfo fileInf = new FileInfo(SourceFolder);
 
                 Console.WriteLine("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);
                 Core.WriteToLog("Beginning Ftp backup on: ftp://" + ServerAddress + "/" + DestinationFolder);

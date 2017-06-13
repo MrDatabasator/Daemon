@@ -23,3 +23,6 @@ D:\Šimon\Prográmko\BackupSW\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupD
 C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
 C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
 C:\Users\novakpatrik\Source\Repos\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
+X:\PROG\backupsw\Daemon\BackupDaemon\BackupDaemon\bin\Debug\BackupDaemon.exe.config
+X:\PROG\backupsw\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.exe
+X:\PROG\backupsw\Daemon\BackupDaemon\BackupDaemon\obj\Debug\BackupDaemon.pdb
